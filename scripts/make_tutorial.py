@@ -89,7 +89,7 @@ def main():
         ("", "python scripts/fill.py config/de_to_nl_2399.json"),
         ("", "python scripts/check.py --template B.xlsm --file 产出.xlsm --source A.xlsx --pt SWIMWEAR"),
         ("", "python scripts/vocab.py --pair \"DE|nl_NL|NL\" --pair \"DE|fr_FR|FR\" --out reference/vocab.tsv"),
-        ("铁律", "① 枚举值只填目标站 official dropdown 里的值；② 源站点没写的字段，目标站点也不写（尤其合规声明）；③ 父体行不填 size/颜色，子体行必须填 parent_sku。"),
+        ("铁律", "① 枚举值只填目标站 official dropdown 里的值；② 源站点没写的字段，目标站点也不写（尤其合规声明）；③ 父体行不填 size/颜色，子体行必须填 parent_sku；④ 产出统一命名 <国家>-<sku>-上传表-dsh生成.xlsm，dsh生成 必带。"),
     ]
     sheet(wb, "00-速查", ["项目", "内容"], quick, widths=[14, 150], first_col_bold=True)
 

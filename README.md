@@ -17,6 +17,7 @@
 | 枚举字段（颜色/尺码/领型/材质…）翻错就被拒 | 从模板 `definedNames → Dropdown Lists` 读**官方允许值**再挑，越界直接报错停下 |
 | 用 openpyxl 保存 xlsm 会丢图片、毁模板 | **XML 手术**：只替换目标 sheet part + sharedStrings，其余 zip 条目字节级保留 |
 | 上次翻的词和上次不一样 | `reference/vocab_de_eu.tsv` 是从**真实上传过的文件**反推的 222 条对照，跨批次一致 |
+| 产出和手工填的表混在一起分不清 | 统一命名 **<国家>-<sku>-上传表-dsh生成.xlsm**（dsh生成 必带） |
 | 上传后才发现超字符/踩禁用词 | `check.py` 上传前体检，11 项，FAIL=0 才交付 |
 
 ---
