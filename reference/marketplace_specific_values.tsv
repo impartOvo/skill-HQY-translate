@@ -1,0 +1,26 @@
+attribute	locale	value	note
+merchant_shipping_group#1.value	nl_NL	Migrated Template	荷兰模板只接受这一个值
+merchant_shipping_group#1.value	fr_BE	Migrated Template	比利时模板只接受这一个值
+merchant_shipping_group#1.value	fr_FR	Modèle par défaut Amazon	法国模板可选 GM-FR / Modèle par défaut Amazon
+merchant_shipping_group#1.value	es_ES	Plantilla de Amazon	西班牙模板可选 GM-ES / Plantilla de Amazon
+merchant_shipping_group#1.value	en_GB	Migrated Template	英国模板可选 DS109-UK-自发货 / Migrated Template
+merchant_shipping_group#1.value	de_DE	Standardvorlage Amazon	德国模板可选 GM-DE / Standardvorlage Amazon
+recommended_browse_nodes#1.value	nl_NL	Kleding, schoenen en sieraden > Dames > Kleding > Zwemkleding > Tankini's > Sets (16392413031)	荷兰模板该 PT 只有一个合法节点
+recommended_browse_nodes#1.value	fr_FR	Mode > Femme > Vêtements > Maillots de bain > Bikinis > Ensembles (用 enums.py 现取)	节点名与 ID 每站不同，禁止照抄源站
+recommended_browse_nodes#1.value	es_ES	用 enums.py 现取	同上
+recommended_browse_nodes#1.value	en_GB	Fashion > Women > Clothing > Swim > One Pieces (1731496031)（示例为连体款）	同上
+shapewear_size#1.size	fr_FR	Moyen / Grand (l) / TG / TTG (xx_l)	法语区不用 M/L/XL 字面
+shapewear_size#1.size	fr_BE	Moyen / Grand (l) / TG / TTG (xx_l)	同 fr_FR
+shapewear_size#1.size	nl_NL	S (s) / M (m) / L (l) / XL / XXL (xx_l)	与德文一致
+shapewear_size#1.size	es_ES	S (s) / M (m) / L (l) / XL / XXL (xx_l)	与德文一致
+shapewear_size#1.size	en_GB	S (s) / M (m) / L (l) / XL / XXL (xx_l)	与德文一致
+parentage_level#1.value	es_ES	Principal. / Niños	西班牙模板原文如此（带句号/复数），不是笔误
+parentage_level#1.value	fr_FR	Parent / Enfant	法比同
+parentage_level#1.value	nl_NL	Ouder / Kind	
+parentage_level#1.value	en_GB	Parent / Child	
+parentage_level#1.value	de_DE	Eltern / Kind	
+amzn1.volt.ca.product_id_type	nl_NL	GTIN-vrijgesteld	父体用；前提是品牌已获 GTIN 豁免
+amzn1.volt.ca.product_id_type	fr_FR	Exemption du GTIN	同上
+amzn1.volt.ca.product_id_type	fr_BE	GTIN Exempt	同上
+amzn1.volt.ca.product_id_type	es_ES	Exento de GTIN	同上
+amzn1.volt.ca.product_id_type	en_GB	GTIN Exempt	同上
