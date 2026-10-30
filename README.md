@@ -63,6 +63,7 @@ README.md
 LICENSE
 scripts/
   flatfile.py                 # 公共库：属性归一化 / 官方允许值解析 / XML 手术写入
+  pick_template.py            # 按类目(bikini/tankini/monokini)自动挑目标站空白模板
   probe.py                    # 探查结构与属性差异
   enums.py                    # 导出某站点某 product type 的官方允许值
   vocab.py                    # 按 SKU+属性名反推跨语言取值对照表

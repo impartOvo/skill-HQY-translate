@@ -95,6 +95,7 @@ def main():
 
     # ---------------- 01 流程 ----------------
     steps = [
+        (0, "选模板", "pick_template.py 按类目词（bikini/tankini/monokini）自动挑目标站空白模板；节点数≤5 说明是按单个 ASIN 预筛的，只能干那一个类目", "目标模板路径", "推荐模板覆盖源表类目，且没有数据行"),
         (1, "摸结构", "probe.py 看两表的 marketplace_id / language_tag / 属性数 / 数据行 / 已填属性", "两张表的属性名清单", "两表数据行数一致；确认第 5 行是属性名、第 7 行起是数据"),
         (2, "对列", "按 normalize 后的属性名（删 marketplace_id、language_tag、[]#=）自动建 DE列→目标列 映射", "映射表（脚本自动生成，不手抄列号）", "源表有值、目标表没这列的要列出来单独判断（例：item_shape 荷兰模板没有）"),
         (3, "查枚举", "从 workbook.xml 的 definedNames 找到 SWIMWEAR+属性 指向 Dropdown Lists 的区间，读出官方允许值", "每字段合法取值集合", "脚本必须把 `[ ] # =` 全删掉再拼名字，否则查不到"),
@@ -188,6 +189,7 @@ def main():
         ("父体行不算必填", "size/颜色/价格/配送/parent_sku 只有子体行才有；按全表计必填会天天刷假 FAIL。", "check.py 用 VARIANT_ONLY + parent_rows 只算子体行"),
         ("条件必填被当硬必填", "ES 模板写 Obligatorio condicionalmente，startswith('obligatorio') 会误判，一次刷 70+ 条假 FAIL。", "先判条件必填再判硬必填，状态词表见 SKILL.md"),
         ("模板被预筛过", "在后台按单个 ASIN 下载的模板，browse node 下拉只剩该商品一个节点（荷兰那份只剩 Bikini's > Sets），拿去上 Tankini/连体款就是错类目。", "enums.py --attr recommended_browse_nodes 看节点数，≤5 就重新下通用模板"),
+        ("下拉里没有对应值", "目标站允许列表里找不到源值；或配置压根没覆盖这个受控字段。", "留空 + 写 <产出>.pending.tsv 清单问客户；fill.py --strict 才中断。优先级：模板已有值 > 允许列表近义值 > 留空问"),
         ("枚举查不到", "definedName 生成时把 `[ ] # =` 删掉了，拼键时也要删；否则 2674 个名字一个都匹配不上。", "flatfile.AllowedValues.get() 统一处理"),
         ("openpyxl 保存毁文件", "openpyxl 保存 xlsm 会丢 xl/media 里的图片、把 sharedStrings 改成内联字符串、动 drawing 引用。", "改用 zip + XML 手术，只替换 1 个 sheet part 和 sharedStrings"),
         ("WPS 二次保存", "用户在 WPS 里打开再存：条目 44→55，13 张图被重编码改名，还加 docProps/custom.xml。", "交付后不要让 WPS 保存；发现条目数变了就重跑 fill.py"),
