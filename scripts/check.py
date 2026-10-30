@@ -32,6 +32,10 @@ PROMO = ["gratis", "free shipping", "bestseller", "topkwaliteit", "beste kwalite
 CONTACT = ["@", "www.", "http", "tel.", "whatsapp", "klantenservice", "kundenservice", "service client"]
 REQ_WORDS = ("Vereist", "Erforderlich", "Obligatoire", "Obligatorio", "Required")
 DEF_SHEET_RE = re.compile(r"definit|finici|definici|definition", re.I)
+# 这些属性只在子体行有意义（父体行本来就没有 size/颜色/价格/配送/父SKU）
+VARIANT_ONLY = ("shapewear_size", "color#", "item_package_", "list_price", "purchasable_offer",
+                "fulfillment_availability", "merchant_shipping_group", "child_parent_sku_relationship",
+                "batteries_included")
 
 
 def fail(msgs, m):
@@ -84,6 +88,15 @@ def main():
     cols = ff.attr_map(s)
     rows = ff.data_rows(s, cols)
 
+    # 父体行：不上架 offer / 变体属性，必填按「子体行」计数
+    PL = cols.get("parentage_level#1.value")
+    parent_rows = set()
+    if PL:
+        for r in rows:
+            v = str(s.cell(r, PL).value or "").strip().lower()
+            if v.startswith(("eltern", "ouder", "parent", "principal", "padre", "vater", "geniteur")):
+                parent_rows.add(r)
+
     # ---------- B. 表头未破坏 ----------
     diff = [(r, c) for r in ff.HEADER_ROWS for c in range(1, s0.max_column + 1)
             if s0.cell(r, c).value != s.cell(r, c).value]
@@ -113,11 +126,18 @@ def main():
                 continue
             filled = [x for x in rows if not ff.is_blank(s.cell(x, c).value)]
             label = str(defs.cell(r, 3).value or a)[:40]
-            if status.lower().startswith(("vereist", "erforderlich", "obligatoire", "obligatorio", "required")) \
-                    and len(filled) < len(rows):
-                hard.append((label, a, "%d/%d" % (len(filled), len(rows))))
-            elif status.lower().startswith(("voorwaardelijk", "bedingt", "sous condition",
-                                            "condicional", "conditional")) and not filled:
+            # 变体/报价类属性只有子体行才需要（父体行本来就没有 size/价格/配送），按子体行计数
+            need_rows = [x for x in rows if x not in parent_rows] if a.startswith(VARIANT_ONLY) else rows
+            hit = [x for x in need_rows if not ff.is_blank(s.cell(x, c).value)]
+            # 先把「条件必填」判掉，否则 "Obligatorio condicionalmente" 会被 startswith("obligatorio") 误判成硬必填
+            is_cond = status.lower().startswith(("voorwaardelijk", "bedingt", "sous condition",
+                                                 "obligatorio condicional", "obligatoire sous condition",
+                                                 "obligatorio condicionalmente", "condicional", "conditional"))
+            is_hard = status.lower().startswith(("vereist", "erforderlich", "obligatoire", "obligatorio",
+                                                 "required")) and not is_cond
+            if is_hard and len(hit) < len(need_rows):
+                hard.append((label, a, "%d/%d" % (len(hit), len(need_rows))))
+            elif is_cond and not filled:
                 cond.append((label, a))
         (ok if not hard else fail)(msgs, "硬性必填缺填: %s" % (hard or "0 项"))
         if cond:
