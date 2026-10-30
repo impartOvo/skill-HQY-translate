@@ -155,10 +155,43 @@ def build_records(cfg, verbose=True):
             for a, why in stats["unmapped"]:
                 print("        - %-56s %s" % (a, why))
         if bad_value:
-            print("[error] 值映射缺项（%d）——必须补 value_map 或确认源数据:" % len(bad_value))
-            for r, a, v in bad_value[:30]:
-                print("        - row%d %s = %r" % (r, a, v))
+            print("[待确认] 目标站下拉里没有对应取值（%d 处）——按规矩不猜、留空，逐条问客户:" % len(bad_value))
+            seen = set()
+            for r, a, v in bad_value:
+                key = (a, str(v))
+                if key in seen:
+                    continue
+                seen.add(key)
+                print("        - %-46s 源值 %r" % (a, str(v)[:40]))
     return records, stats, ws_t, sheet_t
+
+
+def report_pending(cfg, stats, ws_t):
+    """整理「该填但没填」的受控字段清单：<输出>.pending.tsv + 控制台摘要。
+    两类来源：① 源值在目标站下拉里找不到 ② 配置压根没覆盖该属性但目标站是受控字段。
+    """
+    av = ff.AllowedValues(cfg["target"]["path"])
+    cols_t = ff.attr_map(ws_t)
+    rows_out = [("attribute", "source_value", "rows", "allowed_values_sample")]
+    agg = {}
+    for r, a, v in stats["bad_value"]:
+        agg.setdefault((a, str(v)), []).append(r)
+    for a, why in stats["unmapped"]:
+        if "目标模板无此属性" in why:
+            continue
+        c = cols_t.get(a)
+        if not c:
+            continue
+        allowed = av.get("SWIMWEAR", str(ws_t.cell(5, c).value))
+        if allowed:                       # 只有受控字段才需要客户在下拉里选
+            agg.setdefault((a, "<未取值>"), []).append(0)
+    for (a, v), rs in agg.items():
+        c = cols_t.get(a)
+        allowed = av.get("SWIMWEAR", str(ws_t.cell(5, c).value)) if c else None
+        sample = " | ".join((allowed or [])[:12])
+        rows_out.append((a, v, "%d 行" % len(rs) if rs != [0] else "全表", sample))
+    av.close()
+    return rows_out if len(rows_out) > 1 else None
 
 
 def main():
@@ -166,15 +199,20 @@ def main():
     ap.add_argument("config")
     ap.add_argument("--output", default=None)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--strict", action="store_true",
+                    help="源值在目标站下拉里找不到时直接退出（默认：照写能写的，另出待确认清单）")
     args = ap.parse_args()
 
     cfg = ff.load_config(args.config)
     cfg = resolve_paths(cfg, args.config)
     records, stats, ws_t, sheet_t = build_records(cfg)
-    if stats["bad_value"]:
+    pending = report_pending(cfg, stats, ws_t)
+    if stats["bad_value"] and args.strict:
         raise SystemExit(2)
     if args.dry_run:
         print("[dry-run] 未写文件")
+        if pending:
+            print("[dry-run] 待确认 %d 项，正式跑会写到 <输出>.pending.tsv" % (len(pending) - 1))
         return
 
     out = args.output or cfg.get("output")
@@ -202,6 +240,16 @@ def main():
     )
     print("[write] %s  ->  %s" % (info, out))
     print("[ok] 原表未改动；仅替换 %s 与 sharedStrings，其余部件字节级保留" % info["part"])
+
+    if pending:
+        tsv = os.path.splitext(out)[0] + ".pending.tsv"
+        with open(tsv, "w", encoding="utf-8") as f:
+            for row in pending:
+                f.write("\t".join(row) + "\n")
+        print("[待确认] %d 项已写 %s —— 这些字段这次留空，等客户在下拉里选（按规矩不猜）"
+              % (len(pending) - 1, tsv))
+        for row in pending[1:9]:
+            print("        - %-44s %-24r 允许值示例: %s" % (row[0], row[1][:24], row[3][:70]))
 
 
 if __name__ == "__main__":

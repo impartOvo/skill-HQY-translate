@@ -15,7 +15,8 @@ license: MIT
 
 ## 硬规则（违反就算失败）
 
-1. **枚举值只能填目标站点 official dropdown 里的值**。先从目标模板 `workbook.xml → definedNames → 'Dropdown Lists'` 读出允许集合，再挑值；查不到就停下报错，绝不猜近似值。
+1. **枚举值只能填目标站点 official dropdown 里的值**。先从目标模板 `workbook.xml → definedNames → 'Dropdown Lists'` 读出允许集合，再挑值。
+   **优先级：① 模板/历史表里已经出现过的值 → ② 允许列表里语义最近的那个 → ③ 都没有就留空**，留空项写进 `<产出>.pending.tsv` 清单逐条问客户「要不要填、填哪个」，绝不猜。`fill.py --strict` 才会改成硬中断。
 2. **源站点没写的字段，目标站点也不写**。特别注意 EU 新增合规声明（`compliance_has_lining`、`compliance_has_inner_brief`、`compliance_waist_tightness_type`、`compliance_lining_material`）：这是实质申报，客户没确认就不要替他们声明。
 3. **父体行不填 size / 颜色 / 价格**；子体行必须有 `parent_sku`、size、颜色，且 `variation_theme` 全表一致。
 4. **文案上限**：主标题 75、副标题 125、五点各 500（内部标准：第 2 条 ≤700）、描述 2000、后台关键词 250。禁用 `! ? $ _ { } ^ ¬ ¦ ~ # < > * | ; " \ /`、全角标点、促销词、联系方式、HTML。
@@ -39,6 +40,9 @@ license: MIT
 ## 标准流程
 
 ```bash
+# 0) 按类目自动挑模板：表里基本都有 bikini / tankini / monokini 之类的类目词
+python scripts/pick_template.py --source "德国.xlsx" --dir 荷兰      # 或 --scan 荷兰 只看清单
+
 # 1) 摸结构：站点、语言、属性数、数据行、已填属性、两表属性差异
 python scripts/probe.py "德国.xlsx" "目标模板.xlsm" --values --diff
 
@@ -50,15 +54,26 @@ python scripts/vocab.py --pair "德国.xlsx|nl_NL|荷兰已填.xlsm" \
                         --pair "德国.xlsx|fr_FR|法国已填.xlsm" \
                         --out reference/vocab.tsv
 
-# 4) 写配置（text 文案 / copy 原样搬 / numeric 数字 / value_map 兜底 / vocab 引用对照表）
-#    样例见 config/de_to_nl_2399.json
+# 4) 写配置（text 文案 / copy 原样搬 / numeric 数字 / value_map 兜底 / vocab 引用对照表 / naming 命名）
+#    样例见 config/runs/cfg_2399_fr_FR.json
 
-# 5) 写入（XML 手术，原表不动）
-python scripts/fill.py config/de_to_nl_2399.json
+# 5) 写入（XML 手术，原表不动）；下拉里没有的取值会留空并列进 <产出>.pending.tsv
+python scripts/fill.py config/runs/cfg_2399_fr_FR.json
 
 # 6) 体检（FAIL 必须为 0 才能上传）
 python scripts/check.py --template "目标模板.xlsm" --file "产出.xlsm" --source "德国.xlsx" --pt SWIMWEAR
 ```
+
+## 选模板：按类目自动挑（`pick_template.py`）
+
+同一国家可能有好几份空白模板，**别乱用**：
+
+- 从源表读 `swimwear_form_type` / `item_type_name` / 标题 → 判定类目（bikini / tankini / monokini / onepiece）；
+- 扫目标国家文件夹里**没有数据行**的模板，看各自 `recommended_browse_nodes` 覆盖哪些类目；
+- 排序：① 预筛模板且只覆盖本类目（后台按该 ASIN 生成的，最贴）→ ② 其它预筛 → ③ 全量模板（节点多者优先）。
+
+实测（荷兰）：2399 Tankini → `takini set 模板.xlsm`；1391 Monokini → `荷兰 monokini空白模版.xlsm`（142 节点全量）；2375 Bikini → `荷兰空白上传模版.xlsm`（1 节点，专为该类目下载）。
+**节点数 ≤5 就是预筛模板**，只能干那一个类目，拿去上别的类目 = 挂错类目。
 
 ## 列对齐（关键设计）
 
