@@ -75,6 +75,8 @@ config/
   de_to_es_2399.json          # 德国→西班牙
   de_to_en_1391.json          # 德国→英国（连体泳衣款）
   de_to_be_2375.json          # 德国→比利时（法语文案）
+  runs/                       # ★ 9 份真实跑批配置（2399/1391 × 荷英法西比），路径用 {{ZINIAO_EU}} {{SKILL}} 占位
+  vars.example.json           # 占位符变量示例（也可用同名环境变量）
   schema.md                   # 配置字段说明
 reference/
   vocab_de_eu.tsv             # 78 属性 × 222 条 实测跨语言对照（德/荷/英/法/法比/西）

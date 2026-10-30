@@ -97,10 +97,24 @@ av.get("SWIMWEAR", "color[marketplace_id=A1805IZSGTT6HS][language_tag=nl_NL]#1.v
 
 | 源 | 目标 | 行数 | 写入格数 | check.py |
 |---|---|---|---|---|
-| 德国 2399（Tankini 套装） | 荷兰 | 21（1 父 + 4 色 × 5 码） | 1568 | FAIL 0 / WARN 0 |
+| 德国 2399（Tankini 套装） | 荷兰 | 21（1 父 + 4 色 × 5 码） | 1568 | FAIL 0 |
+| 德国 2399 | 英国 / 法国 / 西班牙 / 比利时 | 各 21 | 各 1568 | FAIL 0 |
+| 德国 1391（Monokini 连体） | 英国 / 法国 / 西班牙 / 比利时 | 各 21 | 各 1238 | FAIL 0 |
 | 德国 2375（比基尼套装） | 比利时（法语文案） | 21 | 1611 | FAIL 0 |
 
-回归命令：`python scripts/fill.py config/de_to_nl_2399.json && python scripts/check.py --template … --file … --source … --pt SWIMWEAR`
+9 份真实跑批的配置留在 `config/runs/`（路径已换成 `{{ZINIAO_EU}}`、`{{SKILL}}` 占位符，设同名环境变量或用 `vard` 段即可复跑）。回归命令：
+
+```bash
+python scripts/fill.py config/runs/cfg_2399_fr_FR.json --dry-run   # 只看映射，不写文件
+```
+
+## 跑批实测踩坑（2026-10-30，10 个组合一次跑通后补的）
+
+1. **`copy` 必须优先于 vocab/value_map**：vocab 是从历史表反推的，里面也有 `contribution_sku`、`model_number`、`product_id_value` 这些"值是 SKU/ASIN"的属性，先走 vmap 就会报「值映射缺项」而不写文件。
+2. **父体行不算必填**：`size/颜色/价格/配送/parent_sku` 这些只有子体行该有；check.py 用 `VARIANT_ONLY` + `parent_rows` 按子体行计数，否则每次都是假 FAIL。
+3. **条件必填要先判再判硬必填**：ES 模板的 `Obligatorio condicionalmente` 会被 `startswith("obligatorio")` 误判成硬必填，一次刷 70+ 条假 FAIL。各站状态词：`Vereist / Erforderlich / Obligatoire / Obligatorio / Obligatorio condicionalmente / Required`。
+4. **模板可能被"预筛"过**：在后台按某个 ASIN 下载的模板，browse node 下拉会被筛成该商品**唯一一个**节点。荷兰那份「空白上传模版」只剩 `Bikini's > Sets` ——拿它上 Tankini/连体款就是错类目。判断方法：`enums.py --attr recommended_browse_nodes`，节点数 ≤5 就要重新下载通用模板。
+5. **后台关键词不要撞标题**：`check.py` 会 WARN 列出重复词；新写的文案一律换成标题里没有的同义词/场景词。
 
 ## 换品类时要做的事
 

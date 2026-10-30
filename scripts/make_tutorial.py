@@ -184,6 +184,10 @@ def main():
 
     # ---------------- 07 踩坑 ----------------
     pits = [
+        ("copy 被 vocab 劫持", "vocab 是从历史表反推的，里面也有 contribution_sku / model_number / product_id_value（值是 SKU/ASIN），映射先于 copy 走就会报「值映射缺项」并整份不写。", "fill.py 顺序固定 text → copy → vocab/value_map"),
+        ("父体行不算必填", "size/颜色/价格/配送/parent_sku 只有子体行才有；按全表计必填会天天刷假 FAIL。", "check.py 用 VARIANT_ONLY + parent_rows 只算子体行"),
+        ("条件必填被当硬必填", "ES 模板写 Obligatorio condicionalmente，startswith('obligatorio') 会误判，一次刷 70+ 条假 FAIL。", "先判条件必填再判硬必填，状态词表见 SKILL.md"),
+        ("模板被预筛过", "在后台按单个 ASIN 下载的模板，browse node 下拉只剩该商品一个节点（荷兰那份只剩 Bikini's > Sets），拿去上 Tankini/连体款就是错类目。", "enums.py --attr recommended_browse_nodes 看节点数，≤5 就重新下通用模板"),
         ("枚举查不到", "definedName 生成时把 `[ ] # =` 删掉了，拼键时也要删；否则 2674 个名字一个都匹配不上。", "flatfile.AllowedValues.get() 统一处理"),
         ("openpyxl 保存毁文件", "openpyxl 保存 xlsm 会丢 xl/media 里的图片、把 sharedStrings 改成内联字符串、动 drawing 引用。", "改用 zip + XML 手术，只替换 1 个 sheet part 和 sharedStrings"),
         ("WPS 二次保存", "用户在 WPS 里打开再存：条目 44→55，13 张图被重编码改名，还加 docProps/custom.xml。", "交付后不要让 WPS 保存；发现条目数变了就重跑 fill.py"),
