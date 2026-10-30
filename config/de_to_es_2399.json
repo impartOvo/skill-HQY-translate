@@ -1,0 +1,61 @@
+{
+  "_说明": "样例：德国站 → es_ES 站。paths 为本机示例，用时改成自己的路径（相对路径先按 config 目录、再按仓库根解析）。",
+  "source": {
+    "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\德国\\惠全优 德国 2399 上传表 .xlsx",
+    "attr_row": 5,
+    "data_start": 7
+  },
+  "target": {
+    "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\西班牙\\惠全优-西班牙-2399.xlsm",
+    "attr_row": 5,
+    "data_start": 7
+  },
+  "output_suffix": "西班牙填写_德国2399",
+  "vocab": {
+    "path": "reference/vocab_de_eu.tsv",
+    "locale": "es_ES",
+    "_说明": "vocab 里没有的语言/属性，用 value_map 补"
+  },
+  "text": {
+    "item_name#1.value": "TcIFE Conjunto Tankini Mujer, Barriga Cubierta, Cintura Alta Ajustable",
+    "title_differentiation#1.value": "Diseño Cruzado y Fruncido, Escote en V, Tirantes Ajustables, Bañador de Dos Piezas para Playa, Piscina y Vacaciones",
+    "product_description#1.value": "TcIFE Conjunto Tankini Mujer, Barriga Cubierta, Cintura Alta Ajustable | Diseño Cruzado y Fruncido, Escote en V, Tirantes Ajustables, Bañador de Dos Piezas para Playa, Piscina y Vacaciones",
+    "bullet_point#1.value": "Material: Tejido de alta calidad – CUERPO: 80% poliamida (nailon), 20% elastano; forro: 90% poliéster, 10% elastano. El tejido ligero y suave es agradable para la piel, elástico y de secado rápido en el agua, para un alto confort y comodidad de uso.",
+    "bullet_point#2.value": "Función y diseño: Conjunto tankini para mujer formado por una parte superior larga tipo tankini y una braga de bikini. La parte superior presenta escote en V y efecto envolvente, tirantes ajustables cruzados en la espalda y copas blandas extraíbles con efecto push up que realzan el busto. La braga de bikini de talle alto con fruncido lateral disimula la barriga y estiliza la silueta. La parte superior larga cubre hasta la cadera.",
+    "bullet_point#3.value": "Ocasión: Ideal para playa, piscina, natación, vacaciones, luna de miel, verano, tomar el sol y todo tipo de actividades acuáticas; perfecto para nadar y tomar el sol. También es una elegante idea de regalo para amigas, familiares y jóvenes.",
+    "bullet_point#4.value": "Cuidados: Lavar a mano en frío por separado, no limpiar en seco, no utilizar lejía, no escurrir, secar en tendedero y evitar la exposición directa al sol para conservar el color y la forma.",
+    "bullet_point#5.value": "Talla: Tallas disponibles: S (EU 36), M (EU 38), L (EU 40), XL (EU 42), XXL (EU 44). Consulte nuestra tabla de tallas para elegir la talla adecuada y obtener un ajuste óptimo.",
+    "generic_keyword#1.value": "Tankini dos piezas para mujer",
+    "fabric_type#1.value": "80% Poliamida, 20% Elastano",
+    "model_name#1.value": "Tankini Set"
+  },
+  "copy": [
+    "contribution_sku#1.value",
+    "child_parent_sku_relationship#1.parent_sku",
+    "brand#1.value",
+    "amzn1.volt.ca.product_id_value",
+    "model_number#1.value",
+    "manufacturer#1.value",
+    "part_number#1.value",
+    "number_of_pieces#1.value",
+    "dsa_responsible_party_address#1.value",
+    "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+    "fulfillment_availability#1.fulfillment_channel_code",
+    "product_type#1.value"
+  ],
+  "numeric": [
+    "list_price#1.value_with_tax",
+    "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+    "item_package_dimensions#1.length.value",
+    "item_package_dimensions#1.width.value",
+    "item_package_dimensions#1.height.value",
+    "item_package_weight#1.value"
+  ],
+  "value_map": {
+    "_说明": "vocab 覆盖不到的少数几项在这里兜底（键=属性 alias，值=源值→目标值）",
+    "merchant_shipping_group#1.value": {
+      "Standardvorlage Amazon": "Plantilla de Amazon",
+      "_说明": "每站只认自己的值，见 reference/marketplace_specific_values.tsv"
+    }
+  }
+}

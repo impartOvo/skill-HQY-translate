@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 本地素材（真实上传表、产出文件不进仓库）
+*.xlsm
+*.xlsx
+!docs/教程.xlsx
+_*.log
+_*_test.*
+~$*
+
+# 预览/临时
+docs/_preview/
+*.tmp
+.DS_Store
+Thumbs.db
+
+# 编辑器
+.vscode/
+.idea/

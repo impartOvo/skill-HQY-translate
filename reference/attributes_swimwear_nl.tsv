@@ -1,0 +1,224 @@
+attribute	label_nl	status	sheet_col
+Veldnaam	Naam lokale label	Vereist	
+contribution_sku#1.value	SKU	Vereist	1
+product_type#1.value	Producttype	Vereist	2
+::record_action	Actie voor de aanbieding	Optioneel	3
+parentage_level#1.value	Afstammingsniveau	Optioneel	4
+child_parent_sku_relationship#1.parent_sku	Parent SKU	Voorwaardelijk vereist	5
+variation_theme#1.name	Naam van variatiethema	Voorwaardelijk vereist	6
+item_name#1.value	Itemnaam	Vereist	7
+title_differentiation#1.value	Artikelhoogtepunt	Optioneel	8
+brand#1.value	Merknaam	Vereist	9
+amzn1.volt.ca.product_id_type	Soort product-ID	Vereist	10
+amzn1.volt.ca.product_id_value	Product-id	Voorwaardelijk vereist	11
+recommended_browse_nodes#1.value	Aanbevolen browse nodes	Optioneel	12
+model_number#1.value	Modelnummer	Optioneel	17
+model_name#1.value	Modelnaam	Voorwaardelijk vereist	18
+manufacturer#1.value	Fabrikant	Voorwaardelijk vereist	19
+main_product_image_locator#1.media_location	URL hoofdafbeelding	Optioneel	20
+other_product_image_locator_1#1.media_location	URL andere afbeelding	Optioneel	21
+other_product_image_locator_2#1.media_location	URL andere afbeelding	Optioneel	22
+other_product_image_locator_3#1.media_location	URL andere afbeelding	Optioneel	23
+other_product_image_locator_4#1.media_location	URL andere afbeelding	Optioneel	24
+other_product_image_locator_5#1.media_location	URL andere afbeelding	Optioneel	25
+other_product_image_locator_6#1.media_location	URL andere afbeelding	Optioneel	26
+other_product_image_locator_7#1.media_location	URL andere afbeelding	Optioneel	27
+other_product_image_locator_8#1.media_location	URL andere afbeelding	Optioneel	28
+swatch_product_image_locator#1.media_location	Staal Afbeelding URL	Optioneel	29
+image_locator_ps01#1.media_location	Locatie van de productveiligheidsafbeelding	Optioneel	30
+image_locator_ps02#1.media_location	Locatie van de productveiligheidsafbeelding	Optioneel	31
+image_locator_ps03#1.media_location	Locatie van de productveiligheidsafbeelding	Optioneel	32
+image_locator_ps04#1.media_location	Locatie van de productveiligheidsafbeelding	Optioneel	33
+image_locator_ps05#1.media_location	Locatie van de productveiligheidsafbeelding	Optioneel	34
+image_locator_ps06#1.media_location	Locatie van de productveiligheidsafbeelding	Optioneel	35
+product_description#1.value	Productbeschrijving	Vereist	36
+bullet_point#1.value	Bullet Point	Vereist	37
+generic_keyword#1.value	Zoektrefwoorden	Optioneel	42
+special_feature#1.value	Speciale functies	Aanbevolen	43
+lifestyle#1.value	Levensstijl	Optioneel	48
+style#1.value	Stijl	Voorwaardelijk vereist	49
+department#1.value	Naam afdeling	Voorwaardelijk vereist	50
+target_gender#1.value	Geslacht doelgroep	Voorwaardelijk vereist	51
+age_range_description#1.value	Beschrijving leeftijdsgroep	Voorwaardelijk vereist	52
+shapewear_size#1.size_system	Maatsysteem	Voorwaardelijk vereist	53
+shapewear_size#1.size_class	Maatklasse	Voorwaardelijk vereist	54
+shapewear_size#1.size	Kledingmaat	Voorwaardelijk vereist	55
+shapewear_size#1.size_to	Bovengrens van het groottebereik	Voorwaardelijk vereist	56
+shapewear_size#1.cup_size	Cupgrootte	Voorwaardelijk vereist	57
+shapewear_size#1.band_size	Bandmaat	Voorwaardelijk vereist	58
+shapewear_size#1.body_type	Figuur type	Voorwaardelijk vereist	59
+shapewear_size#1.height_type	Lengte type	Voorwaardelijk vereist	60
+material#1.value	Materiaal	Voorwaardelijk vereist	61
+fabric_type#1.value	Stoftype	Vereist	64
+lining_description#1.value	Beschrijving van de voering	Aanbevolen	65
+number_of_items#1.value	Aantal items	Voorwaardelijk vereist	66
+item_package_quantity#1.value	Item Pakkethoeveelheid	Optioneel	67
+item_type_name#1.value	Naam type item	Voorwaardelijk vereist	68
+strap_type#1.value	Type band	Aanbevolen	69
+water_resistance_level#1.value	Niveau waterastheid	Voorwaardelijk vereist	72
+subject_character#1.value	Onderwerppersonage	Aanbevolen	73
+special_size_type#1.value	Speciaal Formaat	Voorwaardelijk vereist	74
+color#1.standardized_values#1	Kleurenkaart	Voorwaardelijk vereist	75
+color#1.value	Kleur	Voorwaardelijk vereist	76
+item_length_description#1.value	Beschrijving Itemlengte	Voorwaardelijk vereist	77
+number_of_pieces#1.value	Aantal onderdelen	Voorwaardelijk vereist	78
+part_number#1.value	Artikelnummer	Optioneel	79
+theme#1.value	Thema	Aanbevolen	80
+fit_type#1.value	Type Pasvorm	Aanbevolen	81
+weave_type#1.value	Weeftype	Voorwaardelijk vereist	82
+care_instructions#1.value	Onderhoudsinstructies	Voorwaardelijk vereist	83
+rise#1.style#1.value	Stijl instelbare hoogte	Aanbevolen	84
+language#1.type	Type taal	Optioneel	85
+language#1.value	Taal	Optioneel	86
+product_benefit#1.value	Productvoordelen	Optioneel	95
+pattern#1.value	Patroon	Aanbevolen	100
+product_site_launch_date#1.value	Lanceerdatum productsite	Optioneel	101
+league_name#1.value	Naam Competitie	Optioneel	102
+team_name#1.value	Teamnaam	Voorwaardelijk vereist	103
+back#1.style#1.value	Rugstijl	Aanbevolen	104
+chest#1.size#1.value	Kistgrootte	Optioneel	109
+chest#1.size#1.unit	Eenheid Borstomvang	Optioneel	110
+embellishment_feature#1.value	Versieringsfunctie	Aanbevolen	111
+neck#1.neck_style#1.value	Halsstijl	Aanbevolen	116
+waist#1.size#1.value	Taillemaat	Optioneel	121
+waist#1.size#1.unit	Eenheid Taillemaat	Optioneel	122
+swimwear_form_type#1.value	Type vorm van de zwemkleding	Aanbevolen	123
+sleeve#1.length_description#1.value	Beschrijving van de mouwlengte	Optioneel	124
+sleeve#1.type#1.value	Mouwtype	Aanbevolen	125
+closure#1.type#1.value	Type sluiting	Voorwaardelijk vereist	126
+swimwear_top_form#1.value	Vorm van het bovenstuk van de zwemkleding	Aanbevolen	128
+swimwear_bottom_form#1.value	Vorm van het onderstuk van de zwemkleding	Aanbevolen	129
+ultraviolet_protection_factor#1.value	Ultraviolette beschermingsfactor	Optioneel	130
+apparel_fabric_weight_class#1.value	Gewichtsklasse kledingstof	Optioneel	131
+leg_hem_opening_width#1.value	Beenboord openingsbreedte	Optioneel	132
+leg_hem_opening_width#1.unit	Eenheid beenopening breedte	Optioneel	133
+garment_size_country#1.value	Kledingmaat land	Optioneel	134
+apparel_fabric_stretch#1.value	Stretchvermogen van kledingstof	Optioneel	135
+fit_to_size_sentiment#1.value	Gevoel over pasvorm	Optioneel	136
+collection_item#1.value	collection_item[marketplace_id=A1805IZSGTT6HS][language_tag=nl_NL]#1.value	Voorwaardelijk vereist	137
+item_weight#1.value	Gewicht van item	Optioneel	138
+item_weight#1.unit	Eenheid voor gewicht van item	Optioneel	139
+outer#1.material#1.value	Buitenmateriaal	Voorwaardelijk vereist	140
+skip_offer#1.value	Aanbieding overslaan	Optioneel	145
+condition_type#1.value	Conditie van het item	Voorwaardelijk vereist	146
+condition_note#1.value	Aanbieding - opmerking bij de staat	Optioneel	147
+list_price#1.value_with_tax	Catalogusprijs inclusief belasting	Voorwaardelijk vereist	148
+product_tax_code#1.value	BTW-code product	Optioneel	149
+merchant_release_date#1.value	Datum van vrijgave door de handelaar	Optioneel	150
+max_order_quantity#1.value	Maximale bestelaantal	Optioneel	151
+gift_options#1.can_be_messaged	De aanbieding kan als geschenkboodschap worden verzonden	Optioneel	152
+gift_options#1.can_be_wrapped	Geschenkverpakking beschikbaar	Optioneel	153
+main_offer_image_locator#1.media_location	Voornaamste afbeeldingsplaats	Optioneel	154
+other_offer_image_locator_1#1.media_location	Andere afbeeldingslocatie	Optioneel	155
+other_offer_image_locator_2#1.media_location	Andere afbeeldingslocatie	Optioneel	156
+other_offer_image_locator_3#1.media_location	Andere afbeeldingslocatie	Optioneel	157
+other_offer_image_locator_4#1.media_location	Andere afbeeldingslocatie	Optioneel	158
+other_offer_image_locator_5#1.media_location	Andere afbeeldingslocatie	Optioneel	159
+import_designation#1.value	Importaanduiding	Optioneel	160
+supplemental_condition_information#1.accessories	Accessoires	Optioneel	161
+supplemental_condition_information#1.battery_life_percentage	Batterijlevensduurpercentage	Optioneel	162
+supplemental_condition_information#1.cosmetic	Cosmetisch	Optioneel	163
+supplemental_condition_information#1.features#1	Functies	Optioneel	164
+supplemental_condition_information#1.functional_condition	Functionele conditie	Optioneel	169
+supplemental_condition_information#1.packaging	Verpakking	Optioneel	170
+supplemental_condition_information#1.renewed_grade	Renewed-klasse	Optioneel	171
+supplemental_condition_information#1.source_type	Brontype	Optioneel	172
+fulfillment_availability#1.fulfillment_channel_code	Fulfillment Channel Code (NL)	Voorwaardelijk vereist	173
+fulfillment_availability#1.quantity	Hoeveelheid (NL)	Voorwaardelijk vereist	174
+fulfillment_availability#1.lead_time_to_ship_max_days	Verwerkingstijd (NL)	Optioneel	175
+fulfillment_availability#1.restock_date	Hervoorraad datum (NL)	Optioneel	176
+fulfillment_availability#1.is_inventory_available	Voorraad die altijd beschikbaar is (NL)	Voorwaardelijk vereist	177
+purchasable_offer#1.our_price#1.schedule#1.value_with_tax	Uw prijs EUR (Verkopen op Amazon, NL)	Optioneel	178
+purchasable_offer#1.automated_pricing_merchandising_rule_plan#1.merchandising_rule.rule_id	Prijsregel (Verkopen op Amazon, NL)	Optioneel	179
+purchasable_offer#1.minimum_seller_allowed_price#1.schedule#1.value_with_tax	Minimale toegestane prijs voor de verkoper (Verkopen op Amazon, NL)	Optioneel	180
+purchasable_offer#1.maximum_seller_allowed_price#1.schedule#1.value_with_tax	Maximaal toegestane prijs voor de verkoper (Verkopen op Amazon, NL)	Optioneel	181
+purchasable_offer#1.discounted_price#1.schedule#1.end_at	Einddatum van de aanbieding (Verkopen op Amazon, NL)	Optioneel	182
+purchasable_offer#1.discounted_price#1.schedule#1.start_at	Startdatum van de aanbieding (Verkopen op Amazon, NL)	Optioneel	183
+purchasable_offer#1.discounted_price#1.schedule#1.value_with_tax	Aanbiedingsprijs EUR (Verkopen op Amazon, NL)	Optioneel	184
+purchasable_offer#1.start_at.value	Aanbieding Publicatiedatum (Verkopen op Amazon, NL)	Optioneel	185
+purchasable_offer#1.end_at.value	Stop verkoopdatum (Verkopen op Amazon, NL)	Optioneel	186
+merchant_shipping_group#1.value	Verzendsjabloon (NL)	Voorwaardelijk vereist	187
+item_package_dimensions#1.length.value	Pakketlengte	Voorwaardelijk vereist	188
+item_package_dimensions#1.length.unit	Eenheid pakketlengte	Voorwaardelijk vereist	189
+item_package_dimensions#1.width.value	Pakketbreedte	Voorwaardelijk vereist	190
+item_package_dimensions#1.width.unit	Eenheid pakketbreedte	Voorwaardelijk vereist	191
+item_package_dimensions#1.height.value	Pakkethoogte	Voorwaardelijk vereist	192
+item_package_dimensions#1.height.unit	Eenheid pakkethoogte	Voorwaardelijk vereist	193
+item_package_weight#1.value	Pakketgewicht	Voorwaardelijk vereist	194
+item_package_weight#1.unit	Eenheid pakketgewicht	Voorwaardelijk vereist	195
+country_of_origin#1.value	Land van herkomst	Vereist	196
+batteries_required#1.value	Zijn er batterijen nodig?	Voorwaardelijk vereist	197
+batteries_included#1.value	Worden er batterijen meegeleverd?	Voorwaardelijk vereist	198
+battery#1.cell_composition#1.value	Samenstelling batterijcel	Voorwaardelijk vereist	199
+battery#1.cell_composition_other_than_listed#1.value	Samenstelling van de batterijcellen anders dan vermeld	Voorwaardelijk vereist	200
+battery#1.iec_code#1.value	Batterij IEC-code	Optioneel	201
+battery#1.weight#1.value	Gewicht batterij	Voorwaardelijk vereist	202
+battery#1.weight#1.unit	Eenheid voor gewicht van de batterij	Voorwaardelijk vereist	203
+num_batteries#1.quantity	Aantal batterijen	Voorwaardelijk vereist	204
+num_batteries#1.type	Type batterij	Voorwaardelijk vereist	205
+number_of_lithium_metal_cells#1.value	Aantal lithium-metaalcellen	Voorwaardelijk vereist	206
+number_of_lithium_ion_cells#1.value	Aantal lithium-ioncellen	Voorwaardelijk vereist	207
+lithium_battery#1.energy_content#1.value	Energie-inhoud van lithiumbatterij	Voorwaardelijk vereist	208
+lithium_battery#1.energy_content#1.unit	Eenheid voor energie-inhoud van lithiumbatterij	Voorwaardelijk vereist	209
+lithium_battery#1.packaging#1.value	Verpakking lithiumbatterij	Voorwaardelijk vereist	210
+lithium_battery#1.weight#1.value	Gewicht lithiumbatterij	Voorwaardelijk vereist	211
+lithium_battery#1.weight#1.unit	Eenheid voor het gewicht van de lithiumbatterij	Voorwaardelijk vereist	212
+supplier_declared_dg_hz_regulation#1.value	Regelgeving voor gevaarlijke goederen	Vereist	213
+ghs#1.classification#1.class	GHS-klasse	Voorwaardelijk vereist	218
+hazmat#1.aspect	Aspect gevaarlijke stoffen	Voorwaardelijk vereist	223
+hazmat#1.value	Gevaarlijke stoffen	Voorwaardelijk vereist	224
+safety_data_sheet_url#1.value	URL van veiligheidsinformatieblad (SDS of MSDS)	Voorwaardelijk vereist	225
+is_this_product_subject_to_buyer_age_restrictions#1.value	Is dit product onderhevig aan leeftijdsrestricties voor kopers	Optioneel	226
+epr_product_packaging#1.main_material	EPR productverpakking hoofdmateriaal	Optioneel	227
+epr_product_packaging#1.granular_materials#1.granular_material	EPR productverpakkingskorrelmateriaal	Optioneel	228
+epr_product_packaging#1.granular_materials#1.weight.value	EPR productverpakking granulaire materiaalgewichtswaarde	Optioneel	229
+epr_product_packaging#1.granular_materials#1.weight.unit	EPR productverpakking granulaire materiaalgewichtseenheid	Optioneel	230
+epr_product_packaging#1.granular_materials#1.recycled_content_percentage	Percentage gerecycled materiaal in korrelvorm van EPR-productverpakking	Optioneel	231
+dsa_responsible_party_address#1.value	E-mailadres of elektronisch adres van verantwoordelijke persoon	Optioneel	261
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Applicatiegids)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, ECGT - Bio-gebaseerde & Biologisch afbreekbare claims - Onderbouwingsdocument)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Analysecertificaat)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Certificaat van conformiteit)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Compatibiliteitsgids)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Transparancyverklaring inzake de gegevenswet)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Autorisatie gebruik noodgevallen)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Amendement autorisatie noodgebruik)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, ECGT - Claims inzake energie-efficiëntie - Onderbouwingsdocument)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Installatiehandleiding)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Gebruiksaanwijzing)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Informatieblad patiënten)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, ECGT - PFAS-vrije claims - onderbouwingsdocument)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Conformiteitscertificaat van het product)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Informatieblad provider)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, ECGT - Recycleerbaarheidsclaims - Onderbouwingsdocument)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, ECGT - Duurzaamheids- en repareerbaarheidsclaims - Onderbouwingsdocument)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Repareerbaarheidsindex Berekeningsblad)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Veiligheidsinformatieblad)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Veiligheidsinformatie)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Specificatieblad)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Handleiding probleemoplossing)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Gebruikersgids)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Gebruikershandleiding)	Optioneel	262
+compliance_media#1.source_location	Locatie bron nalevingsmedia (nl_NL, Garantie)	Optioneel	262
+gpsr_safety_attestation#1.value	GPSR-veiligheidsattest	Optioneel	287
+gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address	E-mailadres of elektronisch adres van de fabrikant	Optioneel	288
+has_multiple_battery_powered_components#1.value	Heeft meerdere op batterijen werkende onderdelen	Voorwaardelijk vereist	289
+ships_globally#1.value	Wordt wereldwijd verzonden	Optioneel	290
+compliance_bra_type#1.value	Naleving - Bh-type	Optioneel	291
+contains_battery_or_cell#1.value	Bevat batterij of cel	Voorwaardelijk vereist	292
+compliance_age_range#1.value	Naleving - Leeftijdsgeschiktheid	Optioneel	293
+compliance_weave_type#1.value	Type weefsel conformiteit	Voorwaardelijk vereist	294
+battery_contains_free_unabsorbed_liquid#1.value	Batterij bevat vrij ongeabsorbeerd vloeistof	Voorwaardelijk vereist	295
+is_battery_non_spillable#1.value	Is accu lekvrij	Voorwaardelijk vereist	296
+non_lithium_battery_packaging#1.value	Niet-lithiumbatterijverpakking	Voorwaardelijk vereist	297
+has_replaceable_battery#1.value	Heeft vervangbare batterij	Optioneel	298
+non_lithium_battery_energy_content#1.value	Niet-lithium batterij-energie-inhoud	Optioneel	299
+non_lithium_battery_energy_content#1.unit	Niet-lithiumbatterij-energie-inhoudseenheid	Optioneel	300
+has_less_than_30_percent_state_of_charge#1.value	Heeft minder dan 30 procent lading	Voorwaardelijk vereist	301
+battery_installation_device_type#1.value	Type batterij-installatieapparaat	Voorwaardelijk vereist	302
+is_oem_sourced_product#1.value	Is OEM geleverd product	Optioneel	303
+ghs_chemical_h_code#1.value	GHS-chemische-H-code	Optioneel	304
+compliance_has_lining#1.value	Compliance - Heeft voering	Voorwaardelijk vereist	309
+compliance_lining_material#1.value	Compliance - Voeringsmateriaal	Voorwaardelijk vereist	310
+compliance_waist_tightness_type#1.value	Compliance - Type taillevastheid	Voorwaardelijk vereist	311
+compliance_has_inner_brief#1.value	Compliance - Heeft binnenslip	Voorwaardelijk vereist	312

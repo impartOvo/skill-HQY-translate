@@ -1,0 +1,61 @@
+{
+  "_说明": "样例：德国站 → fr_BE 站。paths 为本机示例，用时改成自己的路径（相对路径先按 config 目录、再按仓库根解析）。",
+  "source": {
+    "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\德国\\惠全优 德国 2375 上传表.xlsx",
+    "attr_row": 5,
+    "data_start": 7
+  },
+  "target": {
+    "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\比利时\\SWIMWEAR.xlsm",
+    "attr_row": 5,
+    "data_start": 7
+  },
+  "output_suffix": "比利时填写_德国2375",
+  "vocab": {
+    "path": "reference/vocab_de_eu.tsv",
+    "locale": "fr_BE",
+    "_说明": "vocab 里没有的语言/属性，用 value_map 补"
+  },
+  "text": {
+    "item_name#1.value": "TcIFE Ensemble Bikini Ventre Plat Femme High Waist Maillot de Bain Réglable",
+    "title_differentiation#1.value": "Deux pièces avec haut à devant torsadé et fronces, design triangle, maillot de bain flatteur pour la plage et les vacances",
+    "product_description#1.value": "TcIFE Ensemble Bikini Ventre Plat Femme High Waist Maillot de Bain Réglable | Deux pièces avec haut à devant torsadé et fronces, design triangle, maillot de bain flatteur pour la plage et les vacances",
+    "bullet_point#1.value": "Matière : Matière de haute qualité – CORPS : 80 % polyamide (nylon), 20 % élasthanne ; doublure : 90 % polyester, 10 % élasthanne. Le tissu léger et doux est agréable sur la peau, extensible, respirant et à séchage rapide dans l'eau – une coupe confortable avec un grand confort de port.",
+    "bullet_point#2.value": "Fonction et design : Le haut à devant torsadé, col V et larges bretelles met en valeur le décolleté – sans armature. Le bas de bikini taille haute avec fronces sur les côtés camoufle la zone du ventre et affine la silhouette. Des coques souples amovibles et des bretelles réglables assurent un maintien parfait.",
+    "bullet_point#3.value": "Occasion : Idéal pour la plage, la piscine, les vacances, la lune de miel, l'été, le bronzage et toutes les activités aquatiques, parfait pour la natation et le bronzage. C'est aussi une idée cadeau élégante pour une amie, la famille et les filles.",
+    "bullet_point#4.value": "Entretien : Laver séparément à la main à l'eau froide, ne pas nettoyer à sec, ne pas utiliser d'eau de javel, ne pas essorer, sécher à l'air libre et éviter l'exposition directe au soleil – les couleurs et la forme restent ainsi intactes.",
+    "bullet_point#5.value": "Taille : Tailles et coupe : Différentes tailles disponibles : 36 (S), 38 (M), 40 (L), 42 (XL), 44 (XXL). Veuillez consulter notre guide des tailles pour choisir la taille appropriée et obtenir un ajustement optimal.",
+    "generic_keyword#1.value": "bikini maillot de bain femme",
+    "fabric_type#1.value": "80 % polyamide, 20 % élasthanne",
+    "model_name#1.value": "Ensemble de bikini"
+  },
+  "copy": [
+    "contribution_sku#1.value",
+    "child_parent_sku_relationship#1.parent_sku",
+    "brand#1.value",
+    "amzn1.volt.ca.product_id_value",
+    "model_number#1.value",
+    "manufacturer#1.value",
+    "part_number#1.value",
+    "number_of_pieces#1.value",
+    "dsa_responsible_party_address#1.value",
+    "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+    "fulfillment_availability#1.fulfillment_channel_code",
+    "product_type#1.value"
+  ],
+  "numeric": [
+    "list_price#1.value_with_tax",
+    "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+    "item_package_dimensions#1.length.value",
+    "item_package_dimensions#1.width.value",
+    "item_package_dimensions#1.height.value",
+    "item_package_weight#1.value"
+  ],
+  "value_map": {
+    "_说明": "vocab 覆盖不到的少数几项在这里兜底（键=属性 alias，值=源值→目标值）",
+    "merchant_shipping_group#1.value": {
+      "Standardvorlage Amazon": "Migrated Template",
+      "_说明": "每站只认自己的值，见 reference/marketplace_specific_values.tsv"
+    }
+  }
+}

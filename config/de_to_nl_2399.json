@@ -1,0 +1,67 @@
+{
+  "_说明": "样例：德国站泳衣（Tankini 套装，21 行 = 1 父 + 4 色 × 5 码）搬到荷兰站。paths 为本机示例，用时改成自己的路径（相对路径按 config 文件所在目录解析）。",
+  "source": {
+    "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\德国\\惠全优 德国 2399 上传表 .xlsx",
+    "attr_row": 5,
+    "data_start": 7
+  },
+  "target": {
+    "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\荷兰\\takini set 模板.xlsm",
+    "attr_row": 5,
+    "data_start": 7
+  },
+  "output_suffix": "荷兰填写_德国2399",
+  "vocab": {
+    "path": "reference/vocab_de_eu.tsv",
+    "locale": "nl_NL",
+    "_说明": "从历史成交文件反推的取值对照；缺的属性用下面的 value_map 覆盖或补"
+  },
+  "text": {
+    "item_name#1.value": "TcIFE Tankini Set Dames Buikbedekkende Zwemkleding High Waist Verstelbaar",
+    "title_differentiation#1.value": "Tweedelig badpak met wikkeldesign en plooien, V-hals, verstelbare bandjes, zwemkleding voor strand, zwembad en vakantie",
+    "product_description#1.value": "TcIFE Tankini Set Dames Buikbedekkende Zwemkleding High Waist Verstelbaar | Tweedelig badpak met wikkeldesign en plooien, V-hals, verstelbare bandjes, zwemkleding voor strand, zwembad en vakantie",
+    "bullet_point#1.value": "Materiaal: Hoogwaardig materiaal – BODY: 80% polyamide (nylon), 20% elastaan; voering: 90% polyester, 10% elastaan. De lichte, zachte stof is huidvriendelijk, aangenaam, elastisch en droogt snel in het water – voor hoog comfort en draagcomfort.",
+    "bullet_point#2.value": "Functie en ontwerp: Tankinisset voor dames, bestaande uit een lang tankinitopje en een bikinibroekje. Het topje met V-hals en wikkeloptiek, kruisende verstelbare bandjes op de rug en uitneembare softpads met push-up accentueren de buste. Het bikinibroekje met hoge taille en zijplooien camoufleert de buik en vormt een slank silhouet. Het lange topje reikt tot over de heupen.",
+    "bullet_point#3.value": "Gelegenheid: Ideaal voor strand, zwembad, vakantie, huwelijksreis, zomer, zonnebaden en alle wateractiviteiten, perfect bij het zwemmen en zonnebaden. Ook een stijlvol cadeau-idee voor vriendin, familie en meisjes.",
+    "bullet_point#4.value": "Onderhoudsinstructie: Apart met de hand wassen in koud water, niet chemisch reinigen, geen bleekmiddel gebruiken, niet uitwringen, aan de lijn laten drogen en direct zonlicht vermijden – zo blijven kleur en vorm behouden.",
+    "bullet_point#5.value": "Maat: Maten en pasvorm: Verschillende maten beschikbaar: S (EU 36), M (EU 38), L (EU 40), XL (EU 42), XXL (EU 44). Raadpleeg onze maattabel voor de juiste maat en een optimale pasvorm.",
+    "generic_keyword#1.value": "badpak bikini zwempak push-up zomer strand vakantie",
+    "fabric_type#1.value": "80% polyamide, 20% elastaan",
+    "model_name#1.value": "Tankini set"
+  },
+  "copy": [
+    "contribution_sku#1.value",
+    "child_parent_sku_relationship#1.parent_sku",
+    "brand#1.value",
+    "amzn1.volt.ca.product_id_value",
+    "model_number#1.value",
+    "manufacturer#1.value",
+    "part_number#1.value",
+    "number_of_pieces#1.value",
+    "dsa_responsible_party_address#1.value",
+    "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+    "list_price#1.value_with_tax",
+    "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+    "item_package_dimensions#1.length.value",
+    "item_package_dimensions#1.width.value",
+    "item_package_dimensions#1.height.value",
+    "item_package_weight#1.value",
+    "fulfillment_availability#1.fulfillment_channel_code",
+    "product_type#1.value"
+  ],
+  "numeric": [
+    "list_price#1.value_with_tax",
+    "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+    "item_package_dimensions#1.length.value",
+    "item_package_dimensions#1.width.value",
+    "item_package_dimensions#1.height.value",
+    "item_package_weight#1.value"
+  ],
+  "value_map": {
+    "_说明": "vocab 覆盖不到的少数几项在这里兜底（键=属性 alias，值=德文→目标语）",
+    "merchant_shipping_group#1.value": {
+      "Standardvorlage Amazon": "Migrated Template",
+      "_说明": "每站只认自己的值，见 reference/marketplace_specific_values.tsv"
+    }
+  }
+}

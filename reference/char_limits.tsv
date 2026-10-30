@@ -1,0 +1,8 @@
+field	limit	note
+item_name	75	主标题；品牌开头，无促销词/无全角标点
+title_differentiation	125	副标题；差异化卖点，逗号分隔短语
+product_description	2000	纯文本，不含 HTML/联系方式/卖家信息
+bullet_point#1..5	500	单条上限；第 2 条按内部标准压到 700 以内（信息最密）
+generic_keyword	250	空格分隔，小写，勿重复标题里已有的词
+fabric_type	—	自由文本，写成分比例（如 80% polyamide, 20% elastaan）
+material	—	受控：取值以目标站下拉列表为准
