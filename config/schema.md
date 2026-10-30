@@ -23,8 +23,10 @@
 | `target.path` | ✅ | 目标站点**空白模板**（Amazon 下载的原始模板；不要用已填过的表当模板） |
 | `source.attr_row` / `target.attr_row` | | 系统属性名所在行，默认 5 |
 | `source.data_start` / `target.data_start` | | 数据区起始行，默认 7 |
-| `output` | | 输出路径；不给就用 `<target 目录>/<target 名>_<output_suffix>.<ext>` |
-| `output_suffix` | | 输出文件名后缀，建议 `<语言>填写_德国<编号>` |
+| `naming` | | `{"country": "荷兰", "sku": "2399"}`，给了就按统一命名产出 `<国家>-<sku>-上传表-dsh生成.xlsm`（**推荐**） |
+| `output_pattern` | | 自定义命名模板，默认 `{country}-{sku}-上传表-dsh生成{ext}`；`dsh生成` 必须保留 |
+| `output` | | 直接指定输出路径；给了就忽略 naming |
+| `output_suffix` | | 旧式后缀（仅兼容老配置，不推荐） |
 | `vocab` | | `{path, locale}`：引用 `vocab.py` 产出的跨语言对照表，按 locale 列自动生成 value_map |
 | `text` | | 常量文案，键=属性 alias，值=目标语文案；**只在源表该字段有值的行上写**（父体行自然跳过） |
 | `copy` | | 原样搬运的属主 alias 列表（SKU、parent_sku、品牌、EAN/ASIN、型号、邮箱、FBA 通道…） |
@@ -36,7 +38,8 @@
 1. **alias 写法**：把属性名里的 `[marketplace_id=…]`、`[language_tag=…]` 去掉，保留 `#序号` 与后缀。
    `color[marketplace_id=A1805IZSGTT6HS][language_tag=nl_NL]#1.value` → `color#1.value`
    好处：同一份配置在德国/荷兰/法国/西班牙/英国模板之间通用。
-2. **优先级**：`text` > `value_map`/`vocab` > `copy` > 「配置未覆盖」告警。
+2. **优先级**：`text` > `copy` > `value_map`/`vocab` > 「配置未覆盖」告警。
+   （`copy` 必须在 vmap 之前，否则 SKU/型号/product_id 会被 vocab 里的同名属性劫持，见 SKILL.md 踩坑 1。）
 3. **安全阀**：`value_map` 查不到对应值、`numeric` 转不成数字时，脚本**不写这一格并报错退出（exit 2）**，绝不留半成品。
 
 ## 怎么拿到准确的 alias 清单

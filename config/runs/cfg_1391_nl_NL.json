@@ -1,0 +1,96 @@
+{
+ "source": {
+  "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\德国\\惠全优 德国 1391 上传表.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "target": {
+  "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\荷兰\\荷兰 monokini空白模版.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "naming": {
+  "country": "荷兰",
+  "sku": "1391"
+ },
+ "vocab": {
+  "path": "C:\\Users\\Administrator\\.dsh\\skills\\amazon-flatfile-l10n\\reference\\vocab_de_eu.tsv",
+  "locale": "nl_NL"
+ },
+ "text": {
+  "item_name#1.value": "TcIFE Monokini Zwempak Dames Buikbedekkend Figuurcorrigerend Push Up",
+  "title_differentiation#1.value": "Eendelig badpak met buikcontrole, brede verstelbare bandjes, zwemkleding voor strand, zwembad en vakantie",
+  "product_description#1.value": "TcIFE Monokini Zwempak Dames Buikbedekkend Figuurcorrigerend Push Up | Eendelig badpak met buikcontrole, brede verstelbare bandjes, zwemkleding voor strand, zwembad en vakantie",
+  "bullet_point#1.value": "Materiaal: Hoogwaardig materiaal – BODY: 80% polyamide (nylon), 20% elastaan; voering: 90% polyester, 10% elastaan. De lichte, zachte stof is huidvriendelijk, aangenaam, elastisch en droogt snel in het water – voor veel comfort en draagcomfort.",
+  "bullet_point#2.value": "Functie en ontwerp: Eendelig badpak voor dames met een sleutelgat-halslijn, waarvan de gefronste sierbanden de buste accentueren. De brede, verstelbare bandjes zitten comfortabel en bieden goede ondersteuning. Het gefronste voorpand met zijplooien en gemarkeerde taille camoufleert de buik en vormt een slank silhouet. Uitneembare softpads met push-up vormen de buste. De hoge beenuitsnijding maakt de benen langer.",
+  "bullet_point#3.value": "Gelegenheid: Ideaal voor strand, zwembad, vakantie, huwelijksreis, zomer, zonnebaden en alle wateractiviteiten. Ook een stijlvol cadeau-idee voor vriendin en familie.",
+  "bullet_point#4.value": "Onderhoudsinstructie: Apart met de hand wassen in koud water, niet chemisch reinigen, geen bleekmiddel gebruiken, niet uitwringen, aan de lijn laten drogen en direct zonlicht vermijden – zo blijven kleur en vorm behouden.",
+  "bullet_point#5.value": "Maat: Maten en pasvorm: S (EU 36), M (EU 38), L (EU 40), XL (EU 42), XXL (EU 44). Raadpleeg onze maattabel voor de juiste maat en een optimale pasvorm.",
+  "generic_keyword#1.value": "badpak badmode strand zwembad vakantie zomer een stuk",
+  "fabric_type#1.value": "80% polyamide, 20% elastaan",
+  "model_name#1.value": "Zwempak"
+ },
+ "copy": [
+  "contribution_sku#1.value",
+  "child_parent_sku_relationship#1.parent_sku",
+  "brand#1.value",
+  "amzn1.volt.ca.product_id_value",
+  "model_number#1.value",
+  "manufacturer#1.value",
+  "part_number#1.value",
+  "number_of_pieces#1.value",
+  "dsa_responsible_party_address#1.value",
+  "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+  "fulfillment_availability#1.fulfillment_channel_code",
+  "product_type#1.value"
+ ],
+ "numeric": [
+  "list_price#1.value_with_tax",
+  "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+  "item_package_dimensions#1.length.value",
+  "item_package_dimensions#1.width.value",
+  "item_package_dimensions#1.height.value",
+  "item_package_weight#1.value"
+ ],
+ "value_map": {
+  "merchant_shipping_group#1.value": {
+   "Standardvorlage Amazon": "Migrated Template"
+  },
+  "amzn1.volt.ca.product_id_type": {
+   "ASIN": "ASIN",
+   "GTIN-Freistellung": "GTIN-vrijgesteld"
+  },
+  "item_type_name#1.value": {
+   "Badeanzug": "Zwempak"
+  },
+  "swimwear_form_type#1.value": {
+   "Monokini": "Monokini"
+  },
+  "material#1.value": {
+   "Polyester-Mischung": "Polyestermix"
+  },
+  "color#1.value": {
+   "Schwarz": "Zwart",
+   "Grün": "Groen",
+   "Blau": "Blauw",
+   "Lila": "Paars",
+   "Cyanfarben": "Turkoois",
+   "Navy": "Blauw"
+  },
+  "color#1.standardized_values#1": {
+   "Schwarz": "Zwart",
+   "Grün": "Groen",
+   "Blau": "Blauw",
+   "Lila": "Paars",
+   "Cyanfarben": "Turkoois",
+   "Navy": "Blauw"
+  },
+  "recommended_browse_nodes#1.value": {
+   "Fashion > Damen > Bekleidung > Bademode > Badeanzüge (1981866031)": "Kleding, schoenen en sieraden > Dames > Kleding > Zwemkleding > Badpakken (16392115031)",
+   "Fashion > Damen > Bekleidung > Bademode > Monokinis (27980905031)": "Kleding, schoenen en sieraden > Dames > Kleding > Zwemkleding > Monokini‘s (27980797031)"
+  },
+  "gpsr_safety_attestation#1.value": {
+   "Ja": "Ja"
+  }
+ }
+}

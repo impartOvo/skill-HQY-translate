@@ -181,7 +181,16 @@ def main():
     if not out:
         tgt = cfg["target"]["path"]
         base, ext = os.path.splitext(tgt)
-        out = base + "_%s%s" % (cfg.get("output_suffix", "filled"), ext)
+        naming = cfg.get("naming") or {}
+        if naming:
+            # 统一命名：国家-sku-上传表-dsh生成.xlsm（dsh生成 必须在文件名里，用来区分手工填的表）
+            pattern = cfg.get("output_pattern") or "{country}-{sku}-上传表-dsh生成{ext}"
+            name = pattern.format(country=naming.get("country", ""),
+                                  sku=naming.get("sku") or naming.get("sku_short", ""),
+                                  ext=ext)
+            out = os.path.join(os.path.dirname(tgt), name)
+        else:
+            out = base + "_%s%s" % (cfg.get("output_suffix", "filled"), ext)
 
     info = ff.write_rows_xml(
         target_path=cfg["target"]["path"],

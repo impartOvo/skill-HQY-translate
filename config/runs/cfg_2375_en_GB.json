@@ -1,0 +1,137 @@
+{
+ "source": {
+  "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\德国\\惠全优 德国 2375 上传表.xlsx",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "target": {
+  "path": "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU\\英国\\英国空白上传模版.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "naming": {
+  "country": "英国",
+  "sku": "2375"
+ },
+ "vocab": {
+  "path": "C:\\Users\\Administrator\\.dsh\\skills\\amazon-flatfile-l10n\\reference\\vocab_de_eu.tsv",
+  "locale": "en_GB"
+ },
+ "text": {
+  "item_name#1.value": "TcIFE Tummy Control Bikini Set for Women High Waist Swimwear Adjustable",
+  "title_differentiation#1.value": "Two-piece with twist-front top and gathering, triangle design, figure-flattering swimwear for beach and holiday",
+  "product_description#1.value": "TcIFE Tummy Control Bikini Set for Women High Waist Swimwear Adjustable | Two-piece with twist-front top and gathering, triangle design, figure-flattering swimwear for beach and holiday",
+  "bullet_point#1.value": "Material: Premium material – BODY: 80% polyamide (nylon), 20% elastane; lining: 90% polyester, 10% elastane. The light, soft fabric feels pleasant on the skin, is elastic, breathable and quick-drying in water – a comfortable fit with high wearing comfort.",
+  "bullet_point#2.value": "Function and design: The twist-front top with V-neck and wide straps accentuates the neckline – without underwire. The high-waist bikini bottoms with side gathering conceal the tummy area and create a slim silhouette. Removable soft pads and adjustable straps provide perfect support.",
+  "bullet_point#3.value": "Occasion: Ideal for beach, pool, swimming pool, holiday, honeymoon, summer, sunbathing and all water activities, perfect for swimming and sunbathing. Also a stylish gift idea for girlfriend, family and girls.",
+  "bullet_point#4.value": "Care instructions: Wash separately by hand in cold water, do not dry clean, do not bleach, do not wring, line dry and avoid direct sunlight – this keeps colour and shape.",
+  "bullet_point#5.value": "Size: Sizes and fit: Various sizes available: S (EU 36), M (EU 38), L (EU 40), XL (EU 42), XXL (EU 44). Please refer to our size chart for the right size and an optimal fit.",
+  "generic_keyword#1.value": "two piece swimming costume beach pool holiday push up chlorine resistant",
+  "fabric_type#1.value": "80% polyamide, 20% elastane",
+  "model_name#1.value": "Bikini Set"
+ },
+ "copy": [
+  "contribution_sku#1.value",
+  "child_parent_sku_relationship#1.parent_sku",
+  "brand#1.value",
+  "amzn1.volt.ca.product_id_value",
+  "model_number#1.value",
+  "manufacturer#1.value",
+  "part_number#1.value",
+  "number_of_pieces#1.value",
+  "dsa_responsible_party_address#1.value",
+  "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+  "fulfillment_availability#1.fulfillment_channel_code",
+  "product_type#1.value"
+ ],
+ "numeric": [
+  "list_price#1.value_with_tax",
+  "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+  "item_package_dimensions#1.length.value",
+  "item_package_dimensions#1.width.value",
+  "item_package_dimensions#1.height.value",
+  "item_package_weight#1.value"
+ ],
+ "value_map": {
+  "merchant_shipping_group#1.value": {
+   "Standardvorlage Amazon": "Migrated Template"
+  },
+  "amzn1.volt.ca.product_id_type": {
+   "ASIN": "ASIN",
+   "GTIN-Freistellung": "GTIN Exempt"
+  },
+  "item_type_name#1.value": {
+   "Bikini-Set": "Bikini Set"
+  },
+  "swimwear_form_type#1.value": {
+   "Bikini": "Bikini"
+  },
+  "strap_type#1.value": {
+   "Verstellbar": "Adjustable"
+  },
+  "rise#1.style#1.value": {
+   "Hoch": "High Rise"
+  },
+  "pattern#1.value": {
+   "Einfarbig": "Solid"
+  },
+  "neck#1.neck_style#1.value": {
+   "V-Ausschnitt": "V-Neck"
+  },
+  "sleeve#1.length_description#1.value": {
+   "Ärmellos": "Sleeveless"
+  },
+  "fit_type#1.value": {
+   "Slim": "Slim"
+  },
+  "special_feature#1.value": {
+   "Push-Up": "Push Up"
+  },
+  "special_feature#2.value": {
+   "Chlorbeständig": "Chlorine Resistant"
+  },
+  "special_feature#3.value": {
+   "Einstellbar": "Adjustable"
+  },
+  "special_feature#4.value": {
+   "Schnelltrocknend": "Quick Dry"
+  },
+  "special_feature#5.value": {
+   "Gepolstert": "Padded"
+  },
+  "color#1.value": {
+   "Schwarz": "Black",
+   "Grün": "Green",
+   "Blau": "Blue",
+   "Lila": "Purple",
+   "Cyanfarben": "Turquoise",
+   "Navy": "Navy"
+  },
+  "color#1.standardized_values#1": {
+   "Schwarz": "Black",
+   "Grün": "Green",
+   "Blau": "Blue",
+   "Lila": "Purple",
+   "Cyanfarben": "Turquoise",
+   "Navy": "Blue"
+  },
+  "batteries_required#1.value": {
+   "Nein": "No"
+  },
+  "batteries_included#1.value": {
+   "Nein": "No"
+  },
+  "lifestyle#1.value": {
+   "Lässig": "Casual"
+  },
+  "lining_description#1.value": {
+   "Polyester": "Polyester"
+  },
+  "gpsr_safety_attestation#1.value": {
+   "Ja": "Yes"
+  },
+  "recommended_browse_nodes#1.value": {
+   "Bikini-Sets für Damen (1981863031)": "Fashion > Women > Clothing > Swim > Bikinis > Sets (1731493031)"
+  }
+ }
+}
