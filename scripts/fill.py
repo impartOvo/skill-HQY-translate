@@ -95,13 +95,13 @@ def build_records(cfg, verbose=True):
                 continue
             if a in text:
                 out = text[a]
+            elif a in copy:
+                out = v                      # 原样搬（SKU/ASIN/型号/价格/邮箱…）优先于取值映射
             elif a in vmap:
                 out = vmap[a].get(ff.norm_value(v))
                 if out is None:
                     bad_value.append((r, a, v))
                     continue
-            elif a in copy:
-                out = v
             else:
                 unmapped.append((a, "配置未覆盖"))
                 continue
