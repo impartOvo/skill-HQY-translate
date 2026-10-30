@@ -1,0 +1,124 @@
+{
+ "source": {
+  "path": "{{ZINIAO_EU}}\\德国\\惠全优 德国 2399 上传表 .xlsx",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "target": {
+  "path": "{{ZINIAO_EU}}\\西班牙\\西班牙空白上传模版.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "vocab": {
+  "path": "{{SKILL}}\\reference\\vocab_de_eu.tsv",
+  "locale": "es_ES"
+ },
+ "text": {
+  "item_name#1.value": "TcIFE Conjunto Tankini Mujer, Barriga Cubierta, Cintura Alta Ajustable",
+  "title_differentiation#1.value": "Diseño Cruzado y Fruncido, Escote en V, Tirantes Ajustables, Bañador de Dos Piezas para Playa, Piscina y Vacaciones",
+  "product_description#1.value": "TcIFE Conjunto Tankini Mujer, Barriga Cubierta, Cintura Alta Ajustable | Diseño Cruzado y Fruncido, Escote en V, Tirantes Ajustables, Bañador de Dos Piezas para Playa, Piscina y Vacaciones",
+  "bullet_point#1.value": "Material: Tejido de alta calidad – CUERPO: 80% poliamida (nailon), 20% elastano; forro: 90% poliéster, 10% elastano. El tejido ligero y suave es agradable para la piel, elástico y de secado rápido en el agua, para un alto confort y comodidad de uso.",
+  "bullet_point#2.value": "Función y diseño: Conjunto tankini para mujer formado por una parte superior larga tipo tankini y una braga de bikini. La parte superior presenta escote en V y efecto envolvente, tirantes ajustables cruzados en la espalda y copas blandas extraíbles con efecto push up que realzan el busto. La braga de bikini de talle alto con fruncido lateral disimula la barriga y estiliza la silueta. La parte superior larga cubre hasta la cadera.",
+  "bullet_point#3.value": "Ocasión: Ideal para playa, piscina, natación, vacaciones, luna de miel, verano, tomar el sol y todo tipo de actividades acuáticas; perfecto para nadar y tomar el sol. También es una elegante idea de regalo para amigas, familiares y jóvenes.",
+  "bullet_point#4.value": "Cuidados: Lavar a mano en frío por separado, no limpiar en seco, no utilizar lejía, no escurrir, secar en tendedero y evitar la exposición directa al sol para conservar el color y la forma.",
+  "bullet_point#5.value": "Talla: Tallas disponibles: S (EU 36), M (EU 38), L (EU 40), XL (EU 42), XXL (EU 44). Consulte nuestra tabla de tallas para elegir la talla adecuada y obtener un ajuste óptimo.",
+  "generic_keyword#1.value": "traje de baño dos piezas playa piscina verano",
+  "fabric_type#1.value": "80% Poliamida, 20% Elastano",
+  "model_name#1.value": "Tankini Set"
+ },
+ "copy": [
+  "contribution_sku#1.value",
+  "child_parent_sku_relationship#1.parent_sku",
+  "brand#1.value",
+  "amzn1.volt.ca.product_id_value",
+  "model_number#1.value",
+  "manufacturer#1.value",
+  "part_number#1.value",
+  "number_of_pieces#1.value",
+  "dsa_responsible_party_address#1.value",
+  "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+  "fulfillment_availability#1.fulfillment_channel_code",
+  "product_type#1.value"
+ ],
+ "numeric": [
+  "list_price#1.value_with_tax",
+  "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+  "item_package_dimensions#1.length.value",
+  "item_package_dimensions#1.width.value",
+  "item_package_dimensions#1.height.value",
+  "item_package_weight#1.value"
+ ],
+ "value_map": {
+  "_说明": "由 skill 的 gap 报告 + 各站官方允许值人工确定",
+  "merchant_shipping_group#1.value": {
+   "Standardvorlage Amazon": "Plantilla de Amazon"
+  },
+  "amzn1.volt.ca.product_id_type": {
+   "ASIN": "ASIN",
+   "GTIN-Freistellung": "Exento de GTIN"
+  },
+  "item_type_name#1.value": {
+   "Tankini-Set": "Juego de tankini"
+  },
+  "swimwear_form_type#1.value": {
+   "Tankini": "Tankini"
+  },
+  "strap_type#1.value": {
+   "Verstellbar": "Ajustable"
+  },
+  "rise#1.style#1.value": {
+   "Hoch": "Alto"
+  },
+  "pattern#1.value": {
+   "Einfarbig": "Sólido"
+  },
+  "neck#1.neck_style#1.value": {
+   "V-Ausschnitt": "Cuello en V"
+  },
+  "sleeve#1.length_description#1.value": {
+   "Ärmellos": "Sin mangas"
+  },
+  "fit_type#1.value": {
+   "Slim": "Ceñido"
+  },
+  "batteries_required#1.value": {
+   "Nein": "No"
+  },
+  "batteries_included#1.value": {
+   "Nein": "No"
+  },
+  "gpsr_safety_attestation#1.value": {
+   "Ja": "Sí"
+  },
+  "special_feature#1.value": {
+   "Push-Up": "Push up"
+  },
+  "special_feature#2.value": {
+   "Chlorbeständig": "Resistente al cloro"
+  },
+  "special_feature#3.value": {
+   "Einstellbar": "Ajustable"
+  },
+  "special_feature#4.value": {
+   "Schnelltrocknend": "Secado rápido"
+  },
+  "special_feature#5.value": {
+   "Gepolstert": "Acolchado"
+  },
+  "color#1.value": {
+   "Schwarz": "Negro",
+   "Grün": "Verde",
+   "Blau": "Azul",
+   "Lila": "Morado"
+  },
+  "color#1.standardized_values#1": {
+   "Schwarz": "Negro",
+   "Grün": "Verde",
+   "Blau": "Azul",
+   "Lila": "Morado"
+  },
+  "recommended_browse_nodes#1.value": {
+   "Tankini Sets für Damen (27980921031)": "Deportes y aire libre > Deportes > Deportes acuáticos > Natación > Ropa de baño > Trajes de baño > Mujer > Tankinis > Conjuntos (27981137031)"
+  }
+ }
+}

@@ -1,0 +1,124 @@
+{
+ "source": {
+  "path": "{{ZINIAO_EU}}\\德国\\惠全优 德国 2399 上传表 .xlsx",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "target": {
+  "path": "{{ZINIAO_EU}}\\荷兰\\takini set 模板.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "vocab": {
+  "path": "{{SKILL}}\\reference\\vocab_de_eu.tsv",
+  "locale": "nl_NL"
+ },
+ "text": {
+  "item_name#1.value": "TcIFE Tankini Set Dames Buikbedekkende Zwemkleding High Waist Verstelbaar",
+  "title_differentiation#1.value": "Tweedelig badpak met wikkeldesign en plooien, V-hals, verstelbare bandjes, zwemkleding voor strand, zwembad en vakantie",
+  "product_description#1.value": "TcIFE Tankini Set Dames Buikbedekkende Zwemkleding High Waist Verstelbaar | Tweedelig badpak met wikkeldesign en plooien, V-hals, verstelbare bandjes, zwemkleding voor strand, zwembad en vakantie",
+  "bullet_point#1.value": "Materiaal: Hoogwaardig materiaal – BODY: 80% polyamide (nylon), 20% elastaan; voering: 90% polyester, 10% elastaan. De lichte, zachte stof is huidvriendelijk, aangenaam, elastisch en droogt snel in het water – voor hoog comfort en draagcomfort.",
+  "bullet_point#2.value": "Functie en ontwerp: Tankinisset voor dames, bestaande uit een lang tankinitopje en een bikinibroekje. Het topje met V-hals en wikkeloptiek, kruisende verstelbare bandjes op de rug en uitneembare softpads met push-up accentueren de buste. Het bikinibroekje met hoge taille en zijplooien camoufleert de buik en vormt een slank silhouet. Het lange topje reikt tot over de heupen.",
+  "bullet_point#3.value": "Gelegenheid: Ideaal voor strand, zwembad, vakantie, huwelijksreis, zomer, zonnebaden en alle wateractiviteiten, perfect bij het zwemmen en zonnebaden. Ook een stijlvol cadeau-idee voor vriendin, familie en meisjes.",
+  "bullet_point#4.value": "Onderhoudsinstructie: Apart met de hand wassen in koud water, niet chemisch reinigen, geen bleekmiddel gebruiken, niet uitwringen, aan de lijn laten drogen en direct zonlicht vermijden – zo blijven kleur en vorm behouden.",
+  "bullet_point#5.value": "Maat: Maten en pasvorm: Verschillende maten beschikbaar: S (EU 36), M (EU 38), L (EU 40), XL (EU 42), XXL (EU 44). Raadpleeg onze maattabel voor de juiste maat en een optimale pasvorm.",
+  "generic_keyword#1.value": "badpak bikini zwempak push-up zomer strand vakantie",
+  "fabric_type#1.value": "80% polyamide, 20% elastaan",
+  "model_name#1.value": "Tankini set"
+ },
+ "copy": [
+  "contribution_sku#1.value",
+  "child_parent_sku_relationship#1.parent_sku",
+  "brand#1.value",
+  "amzn1.volt.ca.product_id_value",
+  "model_number#1.value",
+  "manufacturer#1.value",
+  "part_number#1.value",
+  "number_of_pieces#1.value",
+  "dsa_responsible_party_address#1.value",
+  "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+  "fulfillment_availability#1.fulfillment_channel_code",
+  "product_type#1.value"
+ ],
+ "numeric": [
+  "list_price#1.value_with_tax",
+  "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+  "item_package_dimensions#1.length.value",
+  "item_package_dimensions#1.width.value",
+  "item_package_dimensions#1.height.value",
+  "item_package_weight#1.value"
+ ],
+ "value_map": {
+  "_说明": "由 skill 的 gap 报告 + 各站官方允许值人工确定",
+  "merchant_shipping_group#1.value": {
+   "Standardvorlage Amazon": "Migrated Template"
+  },
+  "amzn1.volt.ca.product_id_type": {
+   "ASIN": "ASIN",
+   "GTIN-Freistellung": "GTIN-vrijgesteld"
+  },
+  "item_type_name#1.value": {
+   "Tankini-Set": "Tankini set"
+  },
+  "swimwear_form_type#1.value": {
+   "Tankini": "Tankini"
+  },
+  "strap_type#1.value": {
+   "Verstellbar": "Verstelbaar"
+  },
+  "rise#1.style#1.value": {
+   "Hoch": "Hoog"
+  },
+  "pattern#1.value": {
+   "Einfarbig": "Effen"
+  },
+  "neck#1.neck_style#1.value": {
+   "V-Ausschnitt": "V-hals"
+  },
+  "sleeve#1.length_description#1.value": {
+   "Ärmellos": "Zonder mouwen"
+  },
+  "fit_type#1.value": {
+   "Slim": "Slim"
+  },
+  "batteries_required#1.value": {
+   "Nein": "Nee"
+  },
+  "batteries_included#1.value": {
+   "Nein": "Nee"
+  },
+  "gpsr_safety_attestation#1.value": {
+   "Ja": "Ja"
+  },
+  "special_feature#1.value": {
+   "Push-Up": "Push-up"
+  },
+  "special_feature#2.value": {
+   "Chlorbeständig": "Chloorbestendig"
+  },
+  "special_feature#3.value": {
+   "Einstellbar": "Verstelbaar"
+  },
+  "special_feature#4.value": {
+   "Schnelltrocknend": "Sneldrogend"
+  },
+  "special_feature#5.value": {
+   "Gepolstert": "Gewatteerd"
+  },
+  "color#1.value": {
+   "Schwarz": "Zwart",
+   "Grün": "Groen",
+   "Blau": "Blauw",
+   "Lila": "Paars"
+  },
+  "color#1.standardized_values#1": {
+   "Schwarz": "Zwart",
+   "Grün": "Groen",
+   "Blau": "Blauw",
+   "Lila": "Paars"
+  },
+  "recommended_browse_nodes#1.value": {
+   "Tankini Sets für Damen (27980921031)": "Kleding, schoenen en sieraden > Dames > Kleding > Zwemkleding > Tankini's > Sets (16392413031)"
+  }
+ }
+}

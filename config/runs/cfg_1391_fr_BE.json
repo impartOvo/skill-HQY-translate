@@ -1,0 +1,86 @@
+{
+ "source": {
+  "path": "{{ZINIAO_EU}}\\德国\\惠全优 德国 1391 上传表.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "target": {
+  "path": "{{ZINIAO_EU}}\\比利时\\比利时空白上传表.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "vocab": {
+  "path": "{{SKILL}}\\reference\\vocab_de_eu.tsv",
+  "locale": "fr_BE"
+ },
+ "text": {
+  "item_name#1.value": "TcIFE Maillot de Bain Monokini Femme Ventre Plat Gainant Push Up",
+  "title_differentiation#1.value": "Maillot de bain une pièce avec contrôle du ventre, larges bretelles réglables, maillot pour plage et vacances",
+  "product_description#1.value": "TcIFE Maillot de Bain Monokini Femme Ventre Plat Gainant Push Up | Maillot de bain une pièce avec contrôle du ventre, larges bretelles réglables, maillot pour plage et vacances",
+  "bullet_point#1.value": "Matière : Matière de qualité supérieure – BODY : 80 % polyamide (nylon), 20 % élasthanne ; doublure : 90 % polyester, 10 % élasthanne. Le tissu léger et doux est agréable sur la peau, élastique et sèche rapidement dans l'eau – pour un confort optimal.",
+  "bullet_point#2.value": "Fonction et design : Maillot de bain une pièce pour femme avec encolure cache-cœur nouée, dont les liens froncés mettent la poitrine en valeur. Les larges bretelles réglables assurent un maintien sûr. Le devant froncé avec fronces latérales et taille marquée dissimule le ventre et affine la silhouette. Les coques amovibles rembourrées avec push-up galbent la poitrine. La coupe échancrée allonge les jambes.",
+  "bullet_point#3.value": "Occasion : Idéal pour la plage, la piscine, les vacances, la lune de miel, l'été, le bronzage et toutes les activités aquatiques. Également une idée cadeau élégante pour une amie et la famille.",
+  "bullet_point#4.value": "Entretien : Laver séparément à la main à l'eau froide, ne pas nettoyer à sec, ne pas utiliser d'eau de javel, ne pas essorer, sécher à l'air libre et éviter la lumière directe du soleil – les couleurs et la forme restent intactes.",
+  "bullet_point#5.value": "Taille : Tailles disponibles : S (EU 36), M (EU 38), L (EU 40), XL (EU 42), XXL (EU 44). Consultez notre guide des tailles pour une coupe optimale.",
+  "generic_keyword#1.value": "baignade piscine plage vacances été nager une pièce",
+  "fabric_type#1.value": "80 % polyamide, 20 % élasthanne",
+  "model_name#1.value": "Maillot de bain"
+ },
+ "copy": [
+  "contribution_sku#1.value",
+  "child_parent_sku_relationship#1.parent_sku",
+  "brand#1.value",
+  "amzn1.volt.ca.product_id_value",
+  "model_number#1.value",
+  "manufacturer#1.value",
+  "part_number#1.value",
+  "number_of_pieces#1.value",
+  "dsa_responsible_party_address#1.value",
+  "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+  "fulfillment_availability#1.fulfillment_channel_code",
+  "product_type#1.value"
+ ],
+ "numeric": [
+  "list_price#1.value_with_tax",
+  "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+  "item_package_dimensions#1.length.value",
+  "item_package_dimensions#1.width.value",
+  "item_package_dimensions#1.height.value",
+  "item_package_weight#1.value"
+ ],
+ "value_map": {
+  "_说明": "由 skill 的 gap 报告 + 各站官方允许值人工确定",
+  "merchant_shipping_group#1.value": {
+   "Standardvorlage Amazon": "Migrated Template"
+  },
+  "amzn1.volt.ca.product_id_type": {
+   "ASIN": "ASIN",
+   "GTIN-Freistellung": "GTIN Exempt"
+  },
+  "item_type_name#1.value": {
+   "Badeanzug": "Maillot de bain une pièce"
+  },
+  "swimwear_form_type#1.value": {
+   "Monokini": "Monokini"
+  },
+  "material#1.value": {
+   "Polyester-Mischung": "Mélange de polyester"
+  },
+  "color#1.value": {
+   "Cyanfarben": "Turquoise",
+   "Navy": "Bleu",
+   "Schwarz": "Noir",
+   "Lila": "Violet"
+  },
+  "color#1.standardized_values#1": {
+   "Cyanfarben": "Turquoise",
+   "Navy": "Bleu",
+   "Schwarz": "Noir",
+   "Lila": "Violet"
+  },
+  "recommended_browse_nodes#1.value": {
+   "Fashion > Damen > Bekleidung > Bademode > Badeanzüge (1981866031)": "Mode > Femme > Vêtements > Maillots de bain > Maillots une pièce (27903626031)",
+   "Fashion > Damen > Bekleidung > Bademode > Monokinis (27980905031)": "Mode > Femme > Vêtements > Maillots de bain > Monokinis (27903634031)"
+  }
+ }
+}

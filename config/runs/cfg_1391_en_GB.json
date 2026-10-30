@@ -1,0 +1,86 @@
+{
+ "source": {
+  "path": "{{ZINIAO_EU}}\\德国\\惠全优 德国 1391 上传表.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "target": {
+  "path": "{{ZINIAO_EU}}\\英国\\英国空白上传模版.xlsm",
+  "attr_row": 5,
+  "data_start": 7
+ },
+ "vocab": {
+  "path": "{{SKILL}}\\reference\\vocab_de_eu.tsv",
+  "locale": "en_GB"
+ },
+ "text": {
+  "item_name#1.value": "TcIFE One Piece Swimsuit Women Tummy Control Monokini Push Up",
+  "title_differentiation#1.value": "One piece swimsuit with tummy control, wide adjustable straps, swimwear for beach and holiday",
+  "product_description#1.value": "TcIFE One Piece Swimsuit Women Tummy Control Monokini Push Up | One piece swimsuit with tummy control, wide adjustable straps, swimwear for beach and holiday",
+  "bullet_point#1.value": "Premium Material – BODY: 80% polyamide (nylon), 20% elastane; lining: 90% polyester, 10% elastane. The light, soft fabric is kind to the skin, pleasant, stretchy and quick-drying in water – for high comfort and a great wearing experience.",
+  "bullet_point#2.value": "Function and Design: Swimsuit for women and ladies: this one-piece swimsuit impresses with a modern keyhole neckline whose gathered decorative bands accentuate the bust and create an elegant look. The wide, adjustable straps sit comfortably and give secure support. The gathered front with side ruching and emphasised waist conceals the tummy, shapes a slim, flattering silhouette and ensures a perfect fit – a design that makes every figure look slimmer. Removable padded soft cups with push up shape the bust. The high leg cut lengthens the legs and accentuates your curves. A swimwear must-have.",
+  "bullet_point#3.value": "Ideal for the beach, pool, swimming baths, holiday, honeymoon, summer, sunbathing and all water activities, ideal for swimming and sunbathing. Also a stylish gift idea for a girlfriend, family and girls.",
+  "bullet_point#4.value": "Care Instructions: Wash separately by hand in cold water, do not dry clean, do not use bleach, do not wring, line dry and avoid direct sunlight – this way the colour and shape are preserved.",
+  "bullet_point#5.value": "Size and Fit: Various sizes available: S (UK 8), M (UK 10), L (UK 12), XL (UK 14), XXL (UK 16). Please refer to our size chart for the right size and an optimal fit.",
+  "generic_keyword#1.value": "bathing suit swimwear beach pool holiday chlorine resistant",
+  "fabric_type#1.value": "80% Polyamide, 20% Elastane",
+  "model_name#1.value": "Swimsuit"
+ },
+ "copy": [
+  "contribution_sku#1.value",
+  "child_parent_sku_relationship#1.parent_sku",
+  "brand#1.value",
+  "amzn1.volt.ca.product_id_value",
+  "model_number#1.value",
+  "manufacturer#1.value",
+  "part_number#1.value",
+  "number_of_pieces#1.value",
+  "dsa_responsible_party_address#1.value",
+  "gpsr_manufacturer_reference#1.gpsr_manufacturer_email_address",
+  "fulfillment_availability#1.fulfillment_channel_code",
+  "product_type#1.value"
+ ],
+ "numeric": [
+  "list_price#1.value_with_tax",
+  "purchasable_offer#1.our_price#1.schedule#1.value_with_tax",
+  "item_package_dimensions#1.length.value",
+  "item_package_dimensions#1.width.value",
+  "item_package_dimensions#1.height.value",
+  "item_package_weight#1.value"
+ ],
+ "value_map": {
+  "_说明": "由 skill 的 gap 报告 + 各站官方允许值人工确定",
+  "merchant_shipping_group#1.value": {
+   "Standardvorlage Amazon": "Migrated Template"
+  },
+  "amzn1.volt.ca.product_id_type": {
+   "ASIN": "ASIN",
+   "GTIN-Freistellung": "GTIN Exempt"
+  },
+  "item_type_name#1.value": {
+   "Badeanzug": "One Piece Swimsuit"
+  },
+  "swimwear_form_type#1.value": {
+   "Monokini": "Monokini"
+  },
+  "material#1.value": {
+   "Polyester-Mischung": "Polyester Blend"
+  },
+  "color#1.value": {
+   "Cyanfarben": "Turquoise",
+   "Navy": "Navy",
+   "Schwarz": "Black",
+   "Lila": "Purple"
+  },
+  "color#1.standardized_values#1": {
+   "Cyanfarben": "Turquoise",
+   "Navy": "Blue",
+   "Schwarz": "Black",
+   "Lila": "Purple"
+  },
+  "recommended_browse_nodes#1.value": {
+   "Fashion > Damen > Bekleidung > Bademode > Badeanzüge (1981866031)": "Fashion > Women > Clothing > Swim > One Pieces (1731496031)",
+   "Fashion > Damen > Bekleidung > Bademode > Monokinis (27980905031)": "Fashion > Women > Clothing > Swim > Monokinis (27980939031)"
+  }
+ }
+}

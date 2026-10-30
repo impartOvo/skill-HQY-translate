@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -46,18 +47,34 @@ def load_vocab(path, locale):
 
 
 def resolve_paths(cfg, cfg_path):
-    """相对路径先按 config 所在目录、再按上一级目录解析（便于 reference/ 与 config/ 分开放）"""
+    """① 展开 {{占位符}}：{{SKILL}}=本技能根目录，其余取 cfg['vars'] 或环境变量；
+    ② 相对路径先按 config 所在目录、再按上一级目录解析。"""
+    skill_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    holder_vars = {"SKILL": skill_root}
+    holder_vars.update({k: os.path.expandvars(v) for k, v in (cfg.get("vars") or {}).items()})
+
+    def expand(p):
+        if not isinstance(p, str):
+            return p
+        for k, v in holder_vars.items():
+            p = p.replace("{{%s}}" % k, v)
+        # 剩下的 {{NAME}} 用同名环境变量兜底
+        return re.sub(r"\{\{([A-Za-z0-9_]+)\}\}",
+                      lambda m: os.environ.get(m.group(1), m.group(0)), p)
+
     base = os.path.dirname(os.path.abspath(cfg_path))
     cands = [base, os.path.dirname(base), os.getcwd()]
     for holder, key in ((cfg.get("source") or {}, "path"), (cfg.get("target") or {}, "path"),
                         (cfg.get("vocab") or {}, "path")):
-        p = holder.get(key)
-        if not p or os.path.isabs(p):
+        p = expand(holder.get(key))
+        if not p:
             continue
-        for d in cands:
-            if os.path.exists(os.path.join(d, p)):
-                holder[key] = os.path.join(d, p)
-                break
+        if not os.path.isabs(p):
+            for d in cands:
+                if os.path.exists(os.path.join(d, p)):
+                    p = os.path.join(d, p)
+                    break
+        holder[key] = p
     return cfg
 
 
