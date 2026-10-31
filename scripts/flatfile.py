@@ -19,6 +19,7 @@ import sys
 import json
 import zipfile
 import shutil
+from xml.etree import ElementTree
 
 import openpyxl
 
@@ -166,14 +167,14 @@ def colname(n: int) -> str:
 
 
 def sheet_part(z: zipfile.ZipFile, sheet_title: str) -> str:
-    wbxml = z.read("xl/workbook.xml").decode("utf-8")
-    rels = z.read("xl/_rels/workbook.xml.rels").decode("utf-8")
-    rid2t = dict(re.findall(r'Id="([^"]+)"[^>]*Target="([^"]+)"', rels))
-    rid2t.update({k: v for k, v in re.findall(r'Target="([^"]+)"[^>]*Id="([^"]+)"', rels)})
-    for nm, rid in re.findall(r'<sheet name="([^"]+)"[^>]*r:id="([^"]+)"', wbxml):
-        if nm == sheet_title:
-            t = rid2t[rid]
-            return "xl/" + t.lstrip("/").replace("xl/", "")
+    wb = ElementTree.fromstring(z.read("xl/workbook.xml"))
+    rels = ElementTree.fromstring(z.read("xl/_rels/workbook.xml.rels"))
+    rid2t = {rel.attrib["Id"]: rel.attrib["Target"] for rel in rels}
+    rel_attr = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"
+    for sheet in wb.findall(".//{*}sheet"):
+        if sheet.attrib.get("name") == sheet_title:
+            target = rid2t[sheet.attrib[rel_attr]]
+            return "xl/" + target.lstrip("/").removeprefix("xl/")
     raise SystemExit("sheet 未找到: " + sheet_title)
 
 
@@ -254,3 +255,4 @@ def norm_value(v):
 
 def is_blank(v):
     return v is None or (isinstance(v, str) and not v.strip())
+

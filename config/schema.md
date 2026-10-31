@@ -40,7 +40,7 @@
    好处：同一份配置在德国/荷兰/法国/西班牙/英国模板之间通用。
 2. **优先级**：`text` > `copy` > `value_map`/`vocab` > 「配置未覆盖」告警。
    （`copy` 必须在 vmap 之前，否则 SKU/型号/product_id 会被 vocab 里的同名属性劫持，见 SKILL.md 踩坑 1。）
-3. **安全阀**：`value_map` 查不到对应值、`numeric` 转不成数字时，脚本**不写这一格并报错退出（exit 2）**，绝不留半成品。
+3. **待确认值**：`value_map` 查不到对应值，或映射结果不在目标模板下拉列表中时，默认跳过该格并生成 `.pending.tsv`。使用 `--strict` 则退出（exit 2），不生成上传表。`numeric` 转换失败也会列入待确认项。
 
 ## 怎么拿到准确的 alias 清单
 
@@ -49,3 +49,4 @@ python scripts/probe.py "目标模板.xlsm" --values
 ```
 
 会列出该模板全部属性 alias、所在列、填充状态；把要处理的复制进配置即可。
+

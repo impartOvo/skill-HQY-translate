@@ -69,8 +69,15 @@ def main():
     # ---------- A. 包结构 ----------
     zt, zf = zipfile.ZipFile(args.template), zipfile.ZipFile(args.file)
     same = zt.namelist() == zf.namelist()
-    (ok if same else warn)(msgs, "zip 条目 %d vs %d，集合一致=%s（注释：Excel/WPS 另存会重排图片部件，不影响上传）"
+    (ok if same else warn)(msgs, "zip 条目 %d vs %d，顺序一致=%s"
                           % (len(zt.namelist()), len(zf.namelist()), same))
+    sheet_title = ff.detect_sheet(openpyxl.load_workbook(args.template, read_only=True))
+    changed_sheet = ff.sheet_part(zt, sheet_title)
+    exempt = {changed_sheet, "xl/sharedStrings.xml"}
+    unexpected = sorted(n for n in set(zt.namelist()) | set(zf.namelist())
+                        if n not in exempt and
+                        (n not in zt.namelist() or n not in zf.namelist() or zt.read(n) != zf.read(n)))
+    (ok if not unexpected else fail)(msgs, "非数据部件内容差异: %s" % (unexpected[:8] or "无"))
     bad = []
     for n in zf.namelist():
         if n.endswith(".xml") or n.endswith(".rels"):
@@ -87,6 +94,8 @@ def main():
     s = wb[ff.detect_sheet(wb)]
     cols = ff.attr_map(s)
     rows = ff.data_rows(s, cols)
+    if not rows:
+        fail(msgs, "产出文件没有可检查的数据行")
 
     # 父体行：不上架 offer / 变体属性，必填按「子体行」计数
     PL = cols.get("parentage_level#1.value")
@@ -187,8 +196,7 @@ def main():
         if any(unicodedata.east_asian_width(ch) in ("F", "W") for ch in t):
             warn(msgs, "%s 含全角字符" % label)
 
-    probe = rows[:1] + rows[1:2]
-    for r in probe:
+    for r in rows:
         text_rule("r%d 标题" % r, s.cell(r, cols.get("item_name#1.value", 0)).value, LIMITS["item_name"], True) \
             if "item_name#1.value" in cols else None
         if "title_differentiation#1.value" in cols:
@@ -205,7 +213,7 @@ def main():
         if "generic_keyword#1.value" in cols:
             text_rule("r%d 后台关键词" % r, s.cell(r, cols["generic_keyword#1.value"]).value,
                       LIMITS["generic_keyword"], True, promo=False, contact=False)
-    if "item_name#1.value" in cols and "generic_keyword#1.value" in cols:
+    if rows and "item_name#1.value" in cols and "generic_keyword#1.value" in cols:
         title = str(s.cell(rows[0], cols["item_name#1.value"]).value or "")
         kw = str(s.cell(rows[0], cols["generic_keyword#1.value"]).value or "").lower()
         tw = {w.strip(",.").lower() for w in title.split()}
@@ -286,3 +294,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
