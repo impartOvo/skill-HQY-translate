@@ -96,7 +96,7 @@ av.get("SWIMWEAR", "color[marketplace_id=A1805IZSGTT6HS][language_tag=nl_NL]#1.v
 
 ## 交付前必过
 
-`check.py` 的 11 项：zip 条目集合 / XML 可解析 / 1–6 行零差异 / 硬性必填全填 / 枚举零越界 / 源→目标逐格零缺失零多余 / 文案不超长不违规 / 变体关系正确 / 价格关系正确 / 条件必填逐条确认 / 合规声明不自造。
+`check.py` 会检查非数据部件内容、XML、表头、必填字段、目标模板下拉值、全部数据行的文案、变体和价格。与源表逐格对照及条件必填项会给出待注意提示；这些提示仍需人工核对。
 
 ## 参考数据（随仓库）
 
@@ -137,3 +137,4 @@ python scripts/fill.py config/runs/cfg_2399_fr_FR.json --dry-run   # 只看映�
 2. `enums.py --pt <新PT>` 重新导允许值。
 3. `vocab.py` 用新品类历史文件重建对照表（没有历史文件就手工挑值写 `value_map`）。
 4. 文案上限按类目微调 `check.py` 的 `LIMITS`。
+

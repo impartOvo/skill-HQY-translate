@@ -1,4 +1,6 @@
-# 变量占位符（fill.py 会自动展开）
-# 用法：把本文件内容合进任意 config 的 "vars" 段，或直接设置同名环境变量
-# config/runs/ 里的 9 份配置就是从这批真实跑批里抽出来的，路径已换成占位符
-ZINIAO_EU = "C:\\Users\\Administrator\\AppData\\Roaming\\ziniaobrowserdatas\\ziniao browser\\2．惠全优EU"
+{
+  "vars": {
+    "ZINIAO_EU": "C:\\path\\to\\your\\marketplace-files"
+  }
+}
+

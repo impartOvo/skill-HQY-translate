@@ -7,7 +7,7 @@
 
 配置字段见 config/schema.md；核心思路：
   · text      —— 常量文案（标题/五点/描述/关键词/材质…），按属性名派发，所有数据行同值
-  · value_map —— 枚举值映射（德语取值 → 目标语官方取值），逐格查表，查不到就报错不瞎填
+  · value_map —— 枚举值映射（源站取值 → 目标站允许值），逐格查表，未确定的值跳过并列入待确认清单
   · copy      —— 原样复制（SKU/EAN/ASIN/型号/邮箱/价格…）
   · 源表里有值但配置没覆盖的属性会在结尾列出来，避免悄悄丢字段
 """
@@ -88,6 +88,10 @@ def build_records(cfg, verbose=True):
     cols_s = ff.attr_map(ws_s, cfg.get("source", {}).get("attr_row", ff.ATTR_ROW))
     cols_t = ff.attr_map(ws_t, cfg.get("target", {}).get("attr_row", ff.ATTR_ROW))
     rows = ff.data_rows(ws_s, cols_s, cfg.get("source", {}).get("data_start", ff.DATA_START))
+    product_type_col = cols_s.get("product_type#1.value")
+    product_type = (str(ws_s.cell(rows[0], product_type_col).value).strip()
+                    if rows and product_type_col else "SWIMWEAR")
+    allowed_values = ff.AllowedValues(tgt["path"])
 
     text = cfg.get("text", {})
     vmap = {}
@@ -122,6 +126,10 @@ def build_records(cfg, verbose=True):
             else:
                 unmapped.append((a, "配置未覆盖"))
                 continue
+            allowed = allowed_values.get(product_type, str(ws_t.cell(ff.ATTR_ROW, ct).value))
+            if allowed is not None and isinstance(out, str) and out.strip() not in allowed:
+                bad_value.append((r, a, "映射结果 %r 不在目标模板下拉列表中" % out))
+                continue
             isnum = isinstance(out, (int, float)) and not isinstance(out, bool)
             if a in numeric and not isnum:
                 try:
@@ -137,6 +145,7 @@ def build_records(cfg, verbose=True):
             norecord.add(r)
 
     stats = {
+        "product_type": product_type,
         "source_rows": len(rows),
         "rows_written": len(records),
         "cells": sum(len(c) for _, c in records),
@@ -144,6 +153,7 @@ def build_records(cfg, verbose=True):
         "bad_value": bad_value,
         "rows_without_data": sorted(norecord),
     }
+    allowed_values.close()
     if verbose:
         print("[source] %s" % src["path"])
         print("[target] %s" % tgt["path"])
@@ -182,12 +192,12 @@ def report_pending(cfg, stats, ws_t):
         c = cols_t.get(a)
         if not c:
             continue
-        allowed = av.get("SWIMWEAR", str(ws_t.cell(5, c).value))
+        allowed = av.get(stats["product_type"], str(ws_t.cell(5, c).value))
         if allowed:                       # 只有受控字段才需要客户在下拉里选
             agg.setdefault((a, "<未取值>"), []).append(0)
     for (a, v), rs in agg.items():
         c = cols_t.get(a)
-        allowed = av.get("SWIMWEAR", str(ws_t.cell(5, c).value)) if c else None
+        allowed = av.get(stats["product_type"], str(ws_t.cell(5, c).value)) if c else None
         sample = " | ".join((allowed or [])[:12])
         rows_out.append((a, v, "%d 行" % len(rs) if rs != [0] else "全表", sample))
     av.close()
@@ -239,7 +249,7 @@ def main():
         last_row=max(r for r, _ in records) if records else ff.DATA_START,
     )
     print("[write] %s  ->  %s" % (info, out))
-    print("[ok] 原表未改动；仅替换 %s 与 sharedStrings，其余部件字节级保留" % info["part"])
+    print("[ok] 原表未改动；仅更改 %s 与 sharedStrings 的内容" % info["part"])
 
     if pending:
         tsv = os.path.splitext(out)[0] + ".pending.tsv"
@@ -254,3 +264,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
