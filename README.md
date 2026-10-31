@@ -18,6 +18,20 @@ pip install openpyxl lxml
 
 仓库里的 `config/runs/` 是历史任务配置，用来参考字段映射和文案写法。它们的源文件、目标模板路径需要按自己的电脑修改；仓库没有附带那些上传表。
 
+## 让 AI 下载并使用这个仓库
+
+这个仓库已公开。把下面这段话发给能访问 GitHub 的 AI 工具即可：
+
+> 请从 `https://github.com/impartOvo/skill-HQY-translate` 下载 `main` 分支到你的工作目录。下载后确认根目录有 `SKILL.md`、`README.md`、`scripts/`、`config/` 和 `reference/`，先阅读 `SKILL.md` 与 `config/schema.md`。需要填写上传表时，再向我索取源站已填表和目标站空白模板；不要把仓库中的历史配置直接当成我的文件路径。先运行 `probe.py` 查看两个表的结构，确认目标模板允许值，拟好配置后用 `fill.py --dry-run` 预览，待我确认再生成文件并运行 `check.py`。
+
+如果 AI 可以使用终端，下载命令是：
+
+```bash
+git clone --branch main https://github.com/impartOvo/skill-HQY-translate.git
+```
+
+公开仓库的读取不需要登录。若 AI 没有终端，可以让它通过 GitHub 连接器读取 `SKILL.md`、脚本和参考文件；需要实际运行脚本时，仍要把仓库下载到可执行 Python 的环境中。
+
 ## 一次填写怎么做
 
 以下命令从仓库根目录运行，把文件名和 product type 换成自己的实际值。
