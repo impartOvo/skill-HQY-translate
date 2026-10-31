@@ -22,8 +22,6 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import flatfile as ff  # noqa: E402
 
-ff.utf8_stdio()
-
 # 类目关键词（多语言）：出现在 browse node / item_type_name / 商品标题里
 CAT_PATTERNS = {
     "monokini": r"monokini",
@@ -151,4 +149,5 @@ def main():
 
 
 if __name__ == "__main__":
+    ff.utf8_stdio()
     main()

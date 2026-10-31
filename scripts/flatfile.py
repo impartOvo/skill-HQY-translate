@@ -29,8 +29,14 @@ HEADER_ROWS = (1, 2, 3, 4, 5, 6)
 
 
 def utf8_stdio():
+    """把 stdout 切成 UTF-8。幂等：重复调用不会再包一层
+    （否则旧 wrapper 被回收时会关掉底层 buffer，后面 print 就报 I/O operation on closed file）"""
     try:
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+        if getattr(sys.stdout, "_dsh_utf8", False):
+            return
+        wrapper = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+        wrapper._dsh_utf8 = True
+        sys.stdout = wrapper
     except Exception:
         pass
 
