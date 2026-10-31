@@ -228,6 +228,11 @@ def main():
     head, rows = read_tsv("marketplace_specific_values.tsv")
     sheet(wb, "10-站点专属取值", head, rows, widths=[34, 10, 78, 56])
 
+    # ---------------- 11 空白模板清单（按类目选模板用） ----------------
+    head, rows = read_tsv("template_matrix.tsv")
+    sheet(wb, "11-模板清单", ["国家", "模板文件", "browse node 数", "性质", "覆盖类目", "有数据"],
+          rows, widths=[10, 38, 15, 16, 34, 10])
+
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     wb.save(OUT)
     print("[out]", OUT, "sheets:", wb.sheetnames)
