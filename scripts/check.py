@@ -18,6 +18,7 @@ import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import flatfile as ff  # noqa: E402
+import sku_variants  # noqa: E402
 import openpyxl  # noqa: E402
 from lxml import etree  # noqa: E402
 
@@ -170,6 +171,32 @@ def main():
                 bad_enum.append((r, a, v, lst[:5]))
     (ok if not bad_enum else fail)(msgs, "枚举校验：受控文本单元格 %d 个，越界 %d %s"
                                    % (checked, len(bad_enum), bad_enum[:5]))
+    # SKU 核对与下拉合法性是两项独立检查：语义相符不等于模板允许。
+    sku_c = ff.sku_col(cols)
+    color_c = cols.get("color#1.value")
+    size_c = cols.get("shapewear_size#1.size")
+    if not sku_c:
+        warn(msgs, "SKU 颜色尺码核对未执行：找不到 SKU 列")
+    else:
+        compared = 0
+        for r in rows:
+            if r in parent_rows:
+                continue
+            sku = s.cell(r, sku_c).value
+            color = s.cell(r, color_c).value if color_c else None
+            size = s.cell(r, size_c).value if size_c else None
+            for field, status, detail in sku_variants.compare(sku, color, size):
+                message = "r%d SKU %s [%s] %s" % (r, sku, field, detail)
+                if status == "mismatch":
+                    fail(msgs, message)
+                elif status == "unknown":
+                    warn(msgs, message + "；需人工确认")
+                else:
+                    compared += 1
+        ok(msgs, "SKU 与颜色/尺码匹配 %d 项；未识别项见待注意" % compared)
+        for label, col in (("颜色", color_c), ("尺码", size_c)):
+            if col and av.get(args.pt, str(s.cell(ff.ATTR_ROW, col).value)) is None:
+                warn(msgs, "SKU 核对涉及的%s列未读取到目标模板下拉值；需人工确认允许值" % label)
     av.close()
 
     # ---------- E. 文案规则 ----------
