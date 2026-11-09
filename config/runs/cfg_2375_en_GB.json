@@ -1,11 +1,11 @@
 {
  "source": {
-  "path": "{{ZINIAO_EU}}\\BRAND_A-EU\\德国\\BRAND_A 德国 2375 上传表.xlsx",
+  "path": "{{ZINIAO_EU}}\\德国\\BRAND_A 德国 2375 上传表.xlsx",
   "attr_row": 5,
   "data_start": 7
  },
  "target": {
-  "path": "{{ZINIAO_EU}}\\BRAND_A-EU\\英国\\英国空白上传模版.xlsm",
+  "path": "{{ZINIAO_EU}}\\英国\\英国空白上传模版.xlsm",
   "attr_row": 5,
   "data_start": 7
  },

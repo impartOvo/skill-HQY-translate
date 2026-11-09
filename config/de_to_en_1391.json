@@ -1,12 +1,12 @@
 {
   "_说明": "样例：德国站 → en_GB 站。paths 为本机示例，用时改成自己的路径（相对路径先按 config 目录、再按仓库根解析）。",
   "source": {
-    "path": "{{ZINIAO_EU}}\\BRAND_A-EU\\德国\\BRAND_A 德国 1391 上传表.xlsm",
+    "path": "{{ZINIAO_EU}}\\德国\\BRAND_A 德国 1391 上传表.xlsm",
     "attr_row": 5,
     "data_start": 7
   },
   "target": {
-    "path": "{{ZINIAO_EU}}\\BRAND_A-EU\\英国\\1391.xlsm",
+    "path": "{{ZINIAO_EU}}\\英国\\1391.xlsm",
     "attr_row": 5,
     "data_start": 7
   },

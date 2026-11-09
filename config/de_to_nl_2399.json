@@ -1,12 +1,12 @@
 {
   "_说明": "样例：德国站泳衣（Tankini 套装，21 行 = 1 父 + 4 色 × 5 码）搬到荷兰站。paths 为本机示例，用时改成自己的路径（相对路径按 config 文件所在目录解析）。",
   "source": {
-    "path": "{{ZINIAO_EU}}\\BRAND_A-EU\\德国\\BRAND_A 德国 2399 上传表 .xlsx",
+    "path": "{{ZINIAO_EU}}\\德国\\BRAND_A 德国 2399 上传表 .xlsx",
     "attr_row": 5,
     "data_start": 7
   },
   "target": {
-    "path": "{{ZINIAO_EU}}\\BRAND_A-EU\\荷兰\\takini set 模板.xlsm",
+    "path": "{{ZINIAO_EU}}\\荷兰\\takini set 模板.xlsm",
     "attr_row": 5,
     "data_start": 7
   },

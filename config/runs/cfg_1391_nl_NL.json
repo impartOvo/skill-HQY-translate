@@ -1,11 +1,11 @@
 {
  "source": {
-  "path": "{{ZINIAO_EU}}\\BRAND_A-EU\\德国\\BRAND_A 德国 1391 上传表.xlsm",
+  "path": "{{ZINIAO_EU}}\\德国\\BRAND_A 德国 1391 上传表.xlsm",
   "attr_row": 5,
   "data_start": 7
  },
  "target": {
-  "path": "{{ZINIAO_EU}}\\BRAND_A-EU\\荷兰\\荷兰 monokini空白模版.xlsm",
+  "path": "{{ZINIAO_EU}}\\荷兰\\荷兰 monokini空白模版.xlsm",
   "attr_row": 5,
   "data_start": 7
  },

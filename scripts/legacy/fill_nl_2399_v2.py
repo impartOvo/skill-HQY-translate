@@ -4,8 +4,8 @@ import io, sys, os, re, json, zipfile, shutil
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 import openpyxl
 
-DE = r"{{ZINIAO_EU}}\BRAND_A-EU\德国\BRAND_A 德国 2399 上传表 .xlsx"
-NL = r"{{ZINIAO_EU}}\BRAND_A-EU\荷兰\takini set 模板.xlsm"
+DE = r"{{ZINIAO_EU}}\德国\BRAND_A 德国 2399 上传表 .xlsx"
+NL = r"{{ZINIAO_EU}}\荷兰\takini set 模板.xlsm"
 OUT = os.path.join(os.path.dirname(NL), "takini set 模板_荷兰填写_德国2399_v2.xlsm")
 WD = r"{{WORKDIR}}"
 
